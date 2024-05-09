@@ -1,0 +1,11 @@
+type: object
+properties:
+  headerInfo:
+    type: object
+  pxTransactionId:
+    type: string
+    description: The transction id to reverse
+    example: 123456789
+required:
+  - headerInfo
+  - pxTransactionId

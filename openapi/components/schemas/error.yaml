@@ -1,0 +1,18 @@
+type: object
+properties:
+  result:
+    type: string
+    description: result of the call
+    example: failure
+  errorCode:
+    type: string
+    description: Error code
+    example: transaction.phone_uniqueness_error
+  errorMessage:
+    type: string
+    description: Human-readable error message
+    example: Non-unique identifier 3395555559
+required:
+  - result
+  - errorCode
+  - errorMessage

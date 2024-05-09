@@ -1,0 +1,25 @@
+get:
+  tags:
+    - SMS Enrollment
+  summary: Enroll in SMS
+  description: |
+    Enrolls the phone number in SMS notifications from Paytronix
+  operationId: smsEnroll  
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/smsEnroll.yaml'
+    description: Phone number to enroll
+    required: true
+  security:
+    - bearer_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/Capabilities.yaml'
+    '401':
+      $ref: '../components/responses/Unauthorized.yaml'

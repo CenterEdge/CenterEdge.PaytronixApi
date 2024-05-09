@@ -1,0 +1,8 @@
+description: Card number does not exist or has not yet been issued. This includes wiped cards.
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/Error.yaml'
+    example:
+      code: cardNotFound
+      message: Card Not Found

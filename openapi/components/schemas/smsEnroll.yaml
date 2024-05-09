@@ -1,0 +1,17 @@
+type: object
+properties:
+  merchantId:
+    type: integer
+    description: the merchant id provided by paytronix
+    example: 1107
+  phoneNumber:
+    type: string
+    description: Phone number to enroll
+    example: 3365040379
+  activationStoreCode:
+    type: string
+    description: Paytronix store code where the activation transaction should be performed.
+    example: corp
+required:
+  - merchantId
+  - phoneNumber

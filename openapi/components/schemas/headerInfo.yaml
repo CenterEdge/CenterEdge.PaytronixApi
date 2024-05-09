@@ -1,0 +1,50 @@
+type: object
+properties:
+  merchantId:
+    type: integer
+    description: Paytronix-assigned merchant ID to perform the operation in.
+    example: 1107
+  storeCode:
+    type: string
+    description: A short code to uniquely identify the store where this transaction occurred.
+    example: corp
+  operatorId:
+    type: string
+    description: Identifier of the operator (cashier) who initiated the request. Use 0 if not known.
+    example: 0    
+  terminalId:
+    type: string
+    description: Identifier of the POS terminal that initiated the request.
+    example: 1023
+  posTransactionId:
+    type: string
+    description: Check identifier (check number). This field is required for POST transaction/bulkActivateAdd.json requests. Maximum of 255 characters.
+    example: 999999
+  datetime:
+    type: string
+    description: Date and time the request was initiated. Formatted as ISO8601 date and time yyyy-mm-ddThh:mm:ss[.sss]
+    example: 2004-06-01T13:10:01.001    
+  posTransactionDatetime:
+    type: string
+    description: Date and time the check was opened.
+    example: 2004-06-01 13:10
+  senderId:
+    type: string
+    description: Indicates the type of sender. Always use POS unless instructed otherwise by Paytronix.
+    example: POS
+  programId:
+    type: string
+    description: Indicates the type of program being implemented
+    enum:
+      - LP
+      - SV
+      - CH
+      - PX
+required:
+  - merchantId
+  - storeCode
+  - operatorId
+  - terminalId
+  - posTransactionId
+  - senderId
+  - programId
