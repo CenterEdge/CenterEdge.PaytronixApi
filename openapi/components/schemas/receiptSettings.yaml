@@ -1,0 +1,14 @@
+type: object
+properties:
+  maxWidth:
+    type: integer
+    description: Maximum width of a receipt line
+    example: 40
+  name:
+    type: string
+    description: A name for the receipt setting
+    example: myReceipt
+
+required:
+  - maxWidth
+  - name

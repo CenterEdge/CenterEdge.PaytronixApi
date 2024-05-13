@@ -1,0 +1,9 @@
+type: object
+properties:
+  printedCardNumber:
+    type: string
+    description: The number printed on the card
+    example: 011235813213455
+
+required:
+  - printedCardNumber
