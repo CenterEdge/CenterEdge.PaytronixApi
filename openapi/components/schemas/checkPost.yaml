@@ -1,0 +1,18 @@
+type: object
+properties:
+  merchantId:
+    type: integer
+    description: Paytronix-assigned merchant ID to perform the operation in.
+    example: 1107
+  storeCode:
+    type: string
+    description: A short code to uniquely identify the store where this transaction occurred.
+    example: corp
+  check:
+    type: object
+    description: POS check to post.
+    
+required:
+  - merchantId
+  - storeCode
+  - check

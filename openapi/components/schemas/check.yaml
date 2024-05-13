@@ -1,0 +1,16 @@
+type: object
+properties:
+  header:
+    type: object
+    description: The header to the check. Contains details about the check as as whole, such as check number, number of seats, time opened,   
+  items:
+    type: list[object]  (ONE OF)
+    description: List of individual check items.    
+  totals:
+    type: object
+    description: The totals at the end of the check.
+    
+required:
+  - header
+  - items
+  - totals

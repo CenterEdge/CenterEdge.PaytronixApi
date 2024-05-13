@@ -1,0 +1,66 @@
+type: object
+properties:
+  number:
+    type: string
+    description: Check number that appears on POS receipt. If this number is not guaranteed to be unique within the business day at the particular store, provide ‘uniqueIdentifier’ field as well. Maximum of 255 characters.
+    example: 123456
+  uniqueIdentifier :
+    type: string
+    description: Unique check identification number. Paytronix requires that this is unique within the business day at the particular store. This field should be entered if and only if ‘number’ field isn’t guaranteed to be unique within the business day at the particular store.
+    example: 123456-999-001
+  isReturn :
+    type: boolean
+    description: True if the check is a return check, i.e., a check containing one or more returned items. A check being marked this way does not affect the interpretation of the line items, it’s merely used as an additional data point for various analysis such as fraud analysis.
+    example: True   
+  openTime:
+    type: object
+    description: Date and time the check was opened, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
+    example: 2024-05-06 11:12:23 +5
+  closeTime:
+    type: object
+    description: Date and time the check was closed, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
+    example: 2024-05-06 11:22:23 +5
+  seatCount:
+    type: integer
+    description: Number of seats.
+    example: 3
+  tableNumber:
+    type: string
+    description: Table number or identifier.
+    example: R7   
+  revenueCenterNumber:
+    type: integer
+    description: Identifier for revenue center (cost center) that the check was located in.
+    example: AB1
+  revenueCenterName:
+    type: string
+    description: Human readable description for revenue center (cost center) that the check was located in.
+    example: Restaurant
+  cashier:
+    type: string
+    description: Cashier (operator) ID.
+    example: 43
+  properties:
+    type: map[string]
+    description: Can be empty. Additional POS-specific properties as strings. Defaults to empty.
+  isVoid:
+    type: boolean
+    description: Flag to indicate whether the check is voided.
+    example: True
+  isCatering:
+    type: boolean
+    description: Flag to indicate whether the check is for a catering order.
+    example: True
+  orderMethod:
+    type: string
+    description: Order method of the check. Possible values are: 
+      in store, online web, online app, online app - android, online app - ios, call in, call center, drive through, kiosk, third party ordering, smart home device ordering, other
+  deliveryMethod:
+    type: string
+    description: Delivery method of the check. Possible values are: dine in, pick up, in house delivery, curbside, drive through, third party delivery, other
+
+required:
+  - number 
+  - isReturn
+  - openTime
+  - properties

@@ -1,0 +1,41 @@
+type: object
+properties:
+  subTotal:
+    type: decimal
+    description: Sub total of menu, combo, and discount items. Calculated by summing the price field of each menu, combo, and discount item.
+    example: 6.25
+  taxTotal:
+    type: decimal
+    description: Tax total. Typically calculated by taking the subTotal and multiplying by some appropriate tax rate.
+    example: 1.25    
+  discountTotal:
+    type: decimal
+    description: Total amount of discounts. Sign is relative to check total – that is, a negative amount indicates the check total was reduced by that amount.
+    example: 1.00
+  serviceChargeTotal:
+    type: decimal
+    description: Total of service charges
+    example: 2.50
+  checkTotal:
+    type: decimal
+    description: Check total before tenders and tips. checkTotal can be calculated from the individual totals via the following formula - subTotal + taxTotal + serviceChargeTotal
+    example: 25.00
+  tipTotal:
+    type: decimal
+    description: Total of tips, if known.
+    example: 1.00
+  tenderTotal:
+    type: decimal
+    description:  Total of tenders applied to the check. Typically a negative amount (reducing the check total)
+    example: -5.00
+  itemizedTotals:
+    type: list[object] (ONE OF)
+    description:  Can be empty. Additional POS-specific itemized totals, such as totals by reporting group or similar. Defaults to empty.
+
+required:
+  - subTotal
+  - taxTotal
+  - discountTotal
+  - serviceChargeTotal
+  - tenderTotal
+  - itemizedTotals
