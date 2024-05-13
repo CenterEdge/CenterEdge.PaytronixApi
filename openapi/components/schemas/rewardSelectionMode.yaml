@@ -1,0 +1,13 @@
+type: object
+properties:
+  mode:
+    type: string
+    description: Either "automatic" or "manual". If manual, then chosenRewards is required
+    example: automatic
+  chosenRewards:
+    type: list[object]
+    description: List of manually chosen rewards.
+    
+required:
+  - mode
+  - chosenRewards

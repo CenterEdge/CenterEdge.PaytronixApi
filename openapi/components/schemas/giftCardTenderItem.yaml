@@ -1,0 +1,17 @@
+type: object
+properties:
+  type:
+    type: string
+    description:  Identifies this detail as a gift card detail. Must always be "giftCard".
+    example: giftCard
+  pxTransactionId:
+    type: long
+    description: Paytronix transaction ID, if available and for a Paytronix gift card.
+    example: 1234567890
+  masked:
+    type: string
+    description: Masked account number (typically last 4 digits) from gift card number.
+    example: 1234
+
+required:
+  - type

@@ -1,0 +1,17 @@
+type: object
+properties:
+  type:
+    type: string
+    description:  Identifies this detail as a loyalty card detail. Must always be "loyaltyCard".
+    example: loyaltyCard
+  pxTransactionId:
+    type: long
+    description: Paytronix transaction ID, if available and for a Paytronix comp/loyalty card.
+    example: 1234567890
+  masked:
+    type: string
+    description: Masked account number (typically last 4 digits) from comp/loyalty card number.
+    example: 1234
+
+required:
+  - type

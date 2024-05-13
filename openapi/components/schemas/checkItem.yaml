@@ -1,0 +1,14 @@
+oneOf:
+  - $ref: './comboItem.yaml'
+  - $ref: './discountItem.yaml'
+  - $ref: './menuItem.yaml'
+  - $ref: './serviceChargeItem.yaml'
+  - $ref: './tenderItem.yaml'
+discriminator:
+  propertyName: type
+  mapping:
+    comboItem: './comboItem.yaml'
+    discountItem: './discountItem.yaml'
+    menuItem: './menuItem.yaml'
+    serviceChargeItem: './serviceChargeItem.yaml'
+    tenderItem: './tenderItem.yaml'

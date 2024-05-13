@@ -4,6 +4,35 @@ properties:
     type: string
     description: The number printed on the card
     example: 011235813213455
-
-required:
-  - printedCardNumber
+  trackInfo:
+    type: string
+    description: The complete track two of the magnetic swipe data without the beginning and ending sentinel characters.
+    example: 1234567432131792=4711101792000
+  phoneNumber:
+    type: string
+    description:  Phone number uniquely identifying the guest. If the provided phone number is not unique, an error will be returned, and it is recommended that callers implement POST transaction/accountQuery.json instead.
+    example: 9195551212
+  barcode:
+    type: string
+    description: The barcode data for the card
+    example: 011235813213455
+  appleNfcVasPayload:
+    type: string
+    description: Base64 encoded Apple NFC VAS payload obtained from Apple NFC-enabled passes.
+    example: 011235813213455
+  googleNfcVasPayload:
+    type: string
+    description: Base64 encoded Google NFC VAS payload obtained from Google Passes using SmartTap protocol.
+    example: 011235813213455
+  accountToken:
+    type: string
+    description: Paytronix generated token that uniques identifies a loyalty account. Contact Paytronix for more details.
+    example: 011235813213455
+  cardRegCode:
+    type: string
+    description: Send only if you wish to verify the registration code for the card. If null, then this param will be ignored.
+    example: 1234
+  identificationMethod:
+    type: string
+    description: An optional field that indicates how the guest identified themselves when it cannot be infered from the request. This is only needed if the integrator has a printed card number that they obtained from some method other than the guest manually entering it (i.e. an account query). In this case the integrator would send a printedCardNumber but would send an identificationMethod of ACCOUNT_QUERY. Possible values are ACCOUNT_QUERY and LINKED_CC.
+    example: ACCOUNT_QUERY

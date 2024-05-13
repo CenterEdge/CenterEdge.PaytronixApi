@@ -12,6 +12,7 @@ properties:
     type: string
     description: Paytronix store code where the activation transaction should be performed.
     example: corp
+    
 required:
   - merchantId
   - phoneNumber

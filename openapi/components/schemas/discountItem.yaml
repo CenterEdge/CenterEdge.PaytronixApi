@@ -1,0 +1,67 @@
+type: object
+properties:
+  type:
+    type: string
+    description: Identifies this item as a menu item. Must always be "discountItem"
+    example: discountItem
+  itemId:
+    type: string
+    description: Identifier for the discount item. This identifies the discount item in the Paytronix database, not the particular line item in the check.
+    example: FUELID
+  multiItemDiscountId:
+    type: integer
+    description: Identifier for a combo reward. This identifies the item as part of a combo reward.
+    example: 1
+  name:
+    type: string
+    description: Human-readable description of the discount item.
+    example: Regular Fuel
+  seat:
+    type: integer
+    description: Seat number, if available.
+    example: 1
+  referenceLine:
+    type: string
+    description: Reference line for the discount item, if any.
+    example: 
+  quantity:
+    type: decimal
+    description: Quantity of the discount item purchased. Typically "1". Defaults to 1.
+    example: 12.00
+  isVoided:
+    type: boolean
+    description: True if the discount item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
+    example: True
+  isTaxable:
+    type: boolean
+    description: True if the discount item is a taxable item which contributed to the tax total. Defaults to true.
+    example: True
+  price:
+    type: decimal
+    description: Price of the discount item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
+    example: 12.00
+  fullPrice:
+    type: decimal
+    description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
+    example: 12.00
+  discountSource:
+    type: string
+    description: One of "other", "loyalty", "coupon"
+    example: coupon
+  walletCode:
+    type: integer
+    description: A numeric identifier for a specific type of discount, unique for a given merchant. Populated based on the walletCode field in the ItemDiscount, SubtotalDiscount, or AvailableUnitDiscount which was applied. Must be present for Loyalty and Coupon Discounts
+    example: 123
+  walletQuantity:
+    type: decimal
+    description: Quantity of the wallet which was used. Populated based on the quantityRedeemed field in the ItemDiscount or SubtotalDiscount objects, or the unitDiscount field in a PossibleUse, depending on how the discount was applied to the check. Must be present for Loyalty Discounts
+    example: 1
+  couponId:
+    type: integer
+    description: Unique identifier of the coupon from which this reward came. Must be present for Coupon Discounts.
+    example: 4321
+
+required:
+  - type
+  - itemId
+  - price

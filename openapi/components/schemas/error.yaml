@@ -12,6 +12,7 @@ properties:
     type: string
     description: Human-readable error message
     example: Non-unique identifier 3395555559
+    
 required:
   - result
   - errorCode

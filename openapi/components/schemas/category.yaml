@@ -1,0 +1,18 @@
+type: object
+properties:
+  categoryType:
+    type: string
+    description: Either “major”, “minor”, or “promo”. Type of category if there are multiple types. Use “major” if there are no distinct category types.
+    example: major
+  id:
+    type: string
+    description: Identifier for the category. This identifies the category in the POS database.
+    example: 123
+  name:
+    type: string
+    description: Human-readable description of the menu item.
+    example: Regular Fuel
+     
+required:
+  - categoryType
+  - id

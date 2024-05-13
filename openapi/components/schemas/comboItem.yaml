@@ -1,0 +1,67 @@
+type: object
+properties:
+  type:
+    type: string
+    description: Identifies this item as a menu item. Must always be "comboItem"
+    example: comboItem
+  itemId:
+    type: string
+    description: Identifier for the combo item. This identifies the combo item in the Paytronix database, not the particular line item in the check.
+    example: FUELID
+  name:
+    type: string
+    description: Human-readable description of the combo item.
+    example: Regular Fuel
+  seat:
+    type: integer
+    description: Seat number, if available.
+    example: 1
+  referenceLine:
+    type: string
+    description: Reference line for the combo item, if any.
+    example: 
+  quantity:
+    type: decimal
+    description: Quantity of the combo item purchased. Typically "1". Defaults to 1.
+    example: 12.00
+  categories:
+    type: list[object]
+    description: Can be empty. Any categories the combo item is associated with. Defaults to empty.
+    example: [{"categoryType": "major", "id": "-1"}]
+  isVoided:
+    type: boolean
+    description: True if the combo item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
+    example: True
+  isTaxable:
+    type: boolean
+    description: True if the combo item is a taxable item which contributed to the tax total. Defaults to true.
+    example: True
+  price:
+    type: decimal
+    description: Price of the combo item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
+    example: 12.00
+  fullPrice:
+    type: decimal
+    description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
+    example: 12.00
+  modifiers:
+    type: list[object]
+    description: Can be empty. A list of any modifiers (such as condiments) attached to the combo item. Defaults to empty.
+    example: []
+  discounts:
+    type: list[object]
+    description: Can be empty. A list of any discounts that apply to the single combo item only, applicable for instance if a coupon has been applied. Defaults to empty.
+    example: []
+  items:
+    type: list[object]
+    description: List of menu items to be included in the combo.  
+  consumedQuantity:
+    type: decimal
+    description: Consumed quantity of the combo item. Defaults to 0.
+    example: 0
+
+required:
+  - type
+  - itemId
+  - price
+  - items

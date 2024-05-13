@@ -1,0 +1,29 @@
+type: object
+properties:
+  type:
+    type: string
+    description:  Identifies this detail as a credit card detail. Must always be "creditCard".
+    example: creditCard
+  cardHolder:
+    type: string
+    description: Name of the cardholder as captured from the credit card.
+    example: J Smith
+  cardType:
+    type: string
+    description: Type of credit card. Must be one of “Visa”, “MasterCard”, “American Express”, “Diners Club”, “Discover”, “JCB”, or “other”.
+    example: Visa
+  iin:
+    type: string
+    description: IIN (first 6 digits) from credit card number.
+    example: 469502
+  masked:
+    type: string
+    description: Masked account number (typically last 4 digits) from credit card number.
+    example: 1234
+  expiration:
+    type: string
+    description: Expiration date of the credit card. Format yyyy-MM-dd. Credit cards typically have no day of month component in the expiration date; please enter “01” in that case. For example, if the credit card expires 05/15, this field should be set to 2015-05-01.
+    example: 2015-05-01
+
+required:
+  - type

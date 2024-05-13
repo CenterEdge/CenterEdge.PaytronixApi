@@ -1,0 +1,18 @@
+type: object
+properties:
+  itemizerType:
+    type: string
+    description: Either "sales" or "tax", depending on what is itemized
+    example: sales
+  id:
+    type: string
+    description: Identifier for the itemizer
+    example: Local sales tax  
+  total:
+    type: decimal
+    description: Itemized amount
+    example: 1.00
+
+required:
+  - itemizerType
+  - id

@@ -1,9 +1,5 @@
 type: object
 properties:
-  type:
-    type: string
-    description: Identifies this item as a menu item. Must always be "menuItem"
-    example: menuItem
   itemId:
     type: string
     description: Identifier for the menu item. This identifies the menu item in the Paytronix database, not the particular line item in the check.
@@ -44,10 +40,6 @@ properties:
     type: decimal
     description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
     example: 12.00
-  modifiers:
-    type: list[object]
-    description: Can be empty. A list of any modifiers (such as condiments) attached to the menu item. Defaults to empty.
-    example: []
   discounts:
     type: list[object]
     description: Can be empty. A list of any discounts that apply to the single menu item only, applicable for instance if a coupon has been applied. Defaults to empty.
@@ -58,6 +50,5 @@ properties:
     example: 0
     
 required:
-  - type
   - itemId
   - price
