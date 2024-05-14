@@ -2,10 +2,27 @@ type: object
 properties:
   headerInfo:
     type: object
+    $ref: '.\headerInfo.yaml'
   pxTransactionId:
     type: string
-    description: The transction id to reverse
+    description: The pxTransactionId from reply to transaction to reverse.
     example: 123456789
+  pxAuthCode:
+    type: string
+    description: The pxAuthCode from reply to transaction to reverse.
+    example: 123456789
+  previousPosTransactionId:
+    type: string
+    description: The pxTransactionId from transaction to reverse.
+    example: 123456789
+  previousSequenceNumber:
+    type: string
+    description: The sequenceNumber from transaction to reverse.
+    example: 1
+  previousPosTransactionDatetime:
+    type: string
+    description: The posTransactionDatetime from transaction to reverse
+    example: 2004-06-01 13:10
+
 required:
   - headerInfo
-  - pxTransactionId

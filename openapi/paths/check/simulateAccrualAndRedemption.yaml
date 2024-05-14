@@ -1,0 +1,22 @@
+post:
+  tags:
+    - SimulateAccrualAndRedemption
+  summary: Simulate posting a check with redemption
+  description: |
+    The check simulate accrual and redemption request is similar to the post and accrue points with auto-redeem request, 
+    with the difference that no points or rewards are actually applied. 
+    Instead, this endpoint takes in a check (with the same parameters as in the previous endpoint) and additionally a list of already applied rewards, 
+    the manner in which rewards are to be selected (either automatic or manual and specified with the request), and the details of the receipt printer associated with the request. 
+    If successful, it will return the applicable discounts (see DiscountItem), 
+    a list of attempted rewards that cannot be applied (including any previously applied rewards that are no longer applicable) and a new receipt text.
+  operationId: checkSimulateAccrual
+  security:
+    - bearer_auth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/checkSimulateAccrual.yaml'
+    required: true
+  responses:
+    $ref: '../components/schemas/checkSimulateAccrualResponse.yaml'

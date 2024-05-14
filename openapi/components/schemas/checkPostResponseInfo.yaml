@@ -1,0 +1,14 @@
+type: object
+properties:
+  result:
+    type: string
+    description: success or failure
+    example: success
+  visitCode:
+    type: string
+    description: A generated VisitCode based off the submitted check
+    example: 123
+    
+required:
+  - result
+  - visitCode

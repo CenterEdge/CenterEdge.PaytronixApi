@@ -31,7 +31,7 @@ properties:
     description: The POS operator (cashier) who submitted the check for accrual, usually by closing the check. Use "0" if the operator is unknown or unavailable.
     example: 0
   receiptSettings:
-    type: list[object]
+    type: array
     description: List of receipt settings
     
 required:

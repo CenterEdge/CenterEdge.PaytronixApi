@@ -1,8 +1,0 @@
-description: No authentication token was supplied or the token is invalid
-content:
-  application/json:
-    schema:
-      $ref: '../schemas/Error.yaml'
-    example:
-      code: unauthorized
-      message: Unauthorized

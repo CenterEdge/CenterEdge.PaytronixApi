@@ -1,0 +1,12 @@
+description: |
+  Response information from a check post and accrue points call.
+oneOf:
+  - $ref: './schemas/checkPostAndAccrueSuccess.yaml'
+  - $ref: './schemas/noWorkSuccess.yaml'
+  - $ref: './schemas/error.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    success: './schemas/checkPostAndAccrueSuccess.yaml'
+    noWorkSuccess: './schemas/noWorkSuccess.yaml'
+    failed: './schemas/error.yaml'

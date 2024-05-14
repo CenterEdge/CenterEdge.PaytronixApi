@@ -1,0 +1,43 @@
+type: object
+properties:
+  pointName:
+    type: string
+    description: The name of the point
+    example: Fuel Wallet
+  walletCode:
+    type: integer
+    description: A numeric identifier for the point balance, unique for a given merchant
+    example: 2
+  discountObjectNumber:
+    type: string
+    description: POS discount number to apply when redeeming this wallet as a reward
+    example: 56675
+  balance:
+    type: decimal
+    description: The quantity of the balance remaining on the card after the transaction
+    example: 2.00
+  expirationDates:
+    type: array
+    description: A list of the dates that specified quantities of the reward will expire.
+    items:
+      $ref: './pointExpirationInfo.yaml'
+  additionalExpiringBalance:
+    type: decimal
+    description: The quantity of the reward that will expire later than the returned expirationDates.
+    example: 0.00
+  rewardType:
+    type: string
+    description: Either "FIXED_AMOUNT" or "OPEN_AMOUNT"
+    example: FIXED_AMOUNT
+  rewardValueType:
+    type: string
+    description: One of "PERCENT_DISCOUNT", "DOLLAR_DISCOUNT", "POS_DISCOUNT", "REDUCE_PRICE_TO", "PRECENT_OFF_CATEGORY", "PER_UNIT_DISCOUNT"
+    example: POS_DISCOUNT
+  
+  required:
+    - pointName
+    - walletCode
+    - discountObjectNumber
+    - balance
+    - expirationDates
+    - additionalExpiringBalance

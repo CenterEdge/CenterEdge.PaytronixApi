@@ -1,0 +1,28 @@
+type: object
+properties:
+  name:
+    type: string
+    description: Wallet label followed by `` Earned`` or `` Used``
+    example: Fuel Wallet Used
+  operationType:
+    type: integer
+    description: |
+      1	Add
+      2	Subtract
+      3	Void add
+      4	Void subtract
+    example: 1
+  walletCode:
+    type: integer
+    description: Wallet code.
+    example: 1
+  quantity:
+    type: decimal
+    description: Quantity
+    example: 1.25
+
+  required:
+    - name
+    - operationType
+    - walletCode
+    - quantity

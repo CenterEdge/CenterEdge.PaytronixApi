@@ -5,7 +5,7 @@ properties:
     description: Either "automatic" or "manual". If manual, then chosenRewards is required
     example: automatic
   chosenRewards:
-    type: list[object]
+    type: array
     description: List of manually chosen rewards.
     
 required:

@@ -1,0 +1,24 @@
+type: object
+properties:
+  rewardType:
+    type: integer
+    description: Reward Type
+    example: 1
+  discountItemId:
+    type: integer
+    description: POS discount item ID
+    example: 123
+  walletCode:
+    type: integer
+    description: Wallet code.
+    example: 1
+  quantity:
+    type: decimal
+    description: Quantity
+    example: 1.25
+
+  required:
+    - rewardType
+    - discountItemId
+    - walletCode
+    - quantity

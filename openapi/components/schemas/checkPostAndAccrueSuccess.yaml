@@ -1,0 +1,58 @@
+type: object
+properties:
+  result:
+    type: string
+    example: success
+  reply:
+    type: object
+    description: The add/redeem reply from the point accrual transaction.
+    $ref: './addRedeemReply.yaml'
+  customerName:
+    type: string
+    description: The customer’s name.
+    example: Joe Smith
+  tierName:
+    type: string
+    description: The tier label for this customer
+    example: VIP
+  printedCardNumber:
+    type: string
+    description: The printed card number associated with the account.
+    example: 011235813213455  
+  pointBalances:
+    type: array
+    description: The guest’s loyalty point balances.
+    items:
+      $ref: './pointInfo.yaml'
+  rewardBalances:
+    type: array
+    description: The list of the remaining quantity of all rewards on the given card.    
+    items:
+      $ref: './rewardPointInfo.yaml'
+  changedWalletContents:
+    type: array
+    description: The list of visible points changes.
+    items:
+      $ref: './changedPointInfo.yaml'
+  posMessages:
+    type: array
+    description: A list of messages to be displayed to the cashier
+  guestWebSite:
+    type: string
+    description: A URL where guests can login to see their balances and transaction history
+  receiptText:
+    type: array
+    description: This is a mapping from String labels to sets (or lists) of receipt lines
+
+  required:
+    - result
+    - reply
+    - customerName
+    - tierName
+    - printedCardNumber
+    - pointBalances
+    - rewardBalances
+    - changedWalletContents
+    - posMessages
+    - guestWebSite
+    - receiptText

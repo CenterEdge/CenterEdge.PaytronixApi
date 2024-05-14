@@ -1,0 +1,9 @@
+type: object
+properties:
+  quantity:
+    type: decimal
+    description: The quantity of reward that will expire
+    example: 1.00
+  date:
+    type: string
+    description: Expiration date.

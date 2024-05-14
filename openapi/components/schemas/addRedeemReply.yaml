@@ -1,0 +1,14 @@
+type: object
+properties:
+  addWalletContents:
+    type: array
+    items:
+      $ref: './addWalletContents.yaml'
+  redeemWalletContents:
+    type: array
+    items:
+      $ref: './redeemWalletContents.yaml'
+  changedWalletContents:
+    type: array
+    items:
+      $ref: './changedWalletContents.yaml'

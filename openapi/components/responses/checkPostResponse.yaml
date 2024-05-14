@@ -1,8 +1,8 @@
-description: Bad Request
+description: Response from posting a check
 content:
   application/json:
     schema:
-      $ref: '../schemas/Error.yaml'
+      $ref: '../schemas/checkPostResponseInfo.yaml'
     example:
       code: badRequest
       message: Bad Request

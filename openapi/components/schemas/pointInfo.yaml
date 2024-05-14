@@ -1,0 +1,14 @@
+type: object
+properties:
+  pointName:
+    type: string
+    description: The name of the point
+    example: Coffee Points
+  walletCode:
+    type: integer
+    description: A numeric identifier for the point balance, unique for a given merchant
+    example: 2
+  balance:
+    type: decimal
+    description: The quantity of the balance remaining on the card after the transaction
+    example: 2.00

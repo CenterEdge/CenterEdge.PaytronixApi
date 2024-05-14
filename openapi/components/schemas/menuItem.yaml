@@ -25,7 +25,7 @@ properties:
     description: Quantity of the menu item purchased. Typically "1". Defaults to 1.
     example: 12.00
   categories:
-    type: list[object]
+    type: array
     description: Can be empty. Any categories the menu item is associated with. Defaults to empty.
     example: [{"categoryType": "major", "id": "-1"}]
   isVoided:
@@ -45,11 +45,11 @@ properties:
     description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
     example: 12.00
   modifiers:
-    type: list[object]
+    type: array
     description: Can be empty. A list of any modifiers (such as condiments) attached to the menu item. Defaults to empty.
     example: []
   discounts:
-    type: list[object]
+    type: array
     description: Can be empty. A list of any discounts that apply to the single menu item only, applicable for instance if a coupon has been applied. Defaults to empty.
     example: []
   consumedQuantity:

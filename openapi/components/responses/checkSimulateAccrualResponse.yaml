@@ -1,0 +1,10 @@
+description: |
+  Response information from a check simulate accrual and redemption call.
+oneOf:
+  - $ref: './schemas/checkSimulateAccrualSuccess.yaml'
+  - $ref: './schemas/error.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    success: './schemas/checkSimulateAccrualSuccess.yaml'
+    failure: './schemas/error.yaml'
