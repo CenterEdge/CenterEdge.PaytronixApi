@@ -29,10 +29,20 @@ properties:
     type: string
     description: Either "FIXED_AMOUNT" or "OPEN_AMOUNT"
     example: FIXED_AMOUNT
+    enum:
+      - FIXED_AMOUNT
+      - OPEN_AMOUNT
   rewardValueType:
     type: string
     description: One of "PERCENT_DISCOUNT", "DOLLAR_DISCOUNT", "POS_DISCOUNT", "REDUCE_PRICE_TO", "PRECENT_OFF_CATEGORY", "PER_UNIT_DISCOUNT"
     example: POS_DISCOUNT
+    enum:
+      - PERCENT_DISCOUNT
+      - DOLLAR_DISCOUNT
+      - POS_DISCOUNT
+      - REDUCE_PRICE_TO
+      - PRECENT_OFF_CATEGORY
+      - PER_UNIT_DISCOUNT
   
   required:
     - pointName

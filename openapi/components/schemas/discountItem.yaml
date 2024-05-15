@@ -51,6 +51,10 @@ properties:
     type: string
     description: One of "other", "loyalty", "coupon"
     example: coupon
+    enum:
+      - other
+      - loyalty
+      - coupon
   walletCode:
     type: integer
     description: A numeric identifier for a specific type of discount, unique for a given merchant. Populated based on the walletCode field in the ItemDiscount, SubtotalDiscount, or AvailableUnitDiscount which was applied. Must be present for Loyalty and Coupon Discounts

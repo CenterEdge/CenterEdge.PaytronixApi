@@ -32,6 +32,11 @@ properties:
     type: string
     description: One of “Percent”, “Dollar”, “ReducePrice”, “PerUnit”. Can be ignored.
     example: Dollar
+    enum:
+      - Percent
+      - Dollar
+      - ReducePrice
+      - PerUnit
   walletCode:
     type: integer
     description: A numeric identifier for a specific type of discount, unique for a given merchant.

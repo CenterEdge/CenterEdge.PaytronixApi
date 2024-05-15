@@ -12,6 +12,14 @@ properties:
     type: string
     description: Type of credit card. Must be one of “Visa”, “MasterCard”, “American Express”, “Diners Club”, “Discover”, “JCB”, or “other”.
     example: Visa
+    enum:
+      - 'Visa'
+      - 'MasterCard'
+      - 'American Express'
+      - 'Diners Club'
+      - 'Discover'
+      - 'JCB'
+      - 'other'
   iin:
     type: string
     description: IIN (first 6 digits) from credit card number.
