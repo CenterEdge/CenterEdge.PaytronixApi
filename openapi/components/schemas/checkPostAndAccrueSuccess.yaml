@@ -41,8 +41,12 @@ properties:
     type: string
     description: A URL where guests can login to see their balances and transaction history
   receiptText:
-    type: array
+    type: object
     description: This is a mapping from String labels to sets (or lists) of receipt lines
+    additionalProperties:
+      type: array
+      items:
+        type: string
 
   required:
     - result

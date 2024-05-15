@@ -52,8 +52,12 @@ properties:
     items:
       $ref: './availableUnitDiscount.yaml'
   receiptText:
-    type: array
-    description: This is a mapping from String labels to sets (or lists) of receipt lines.
+    type: object
+    description: This is a mapping from String labels to sets (or lists) of receipt lines
+    additionalProperties:
+      type: array
+      items:
+        type: string
   customerName:
     type: string
     description: The customer’s name.
