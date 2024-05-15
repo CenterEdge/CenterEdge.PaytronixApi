@@ -9,10 +9,10 @@ get:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/smsEnroll.yaml'
+          $ref: '../../components/schemas/smsEnroll.yaml'
     description: Phone number to enroll
     required: true
   security:
     - bearer_auth: []
   responses:
-    $ref: '../components/responses/smsEnrollResponse.yaml'
+    $ref: '../../components/responses/smsEnrollResponse.yaml'

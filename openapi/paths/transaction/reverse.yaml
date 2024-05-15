@@ -13,9 +13,9 @@ get:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/reverse.yaml'
+          $ref: '../../components/schemas/reverse.yaml'
     required: true
   security:
     - bearer_auth: []
   responses:
-    $ref: '../components/responses/transactionReply.yaml'
+    $ref: '../../components/responses/transactionReply.yaml'

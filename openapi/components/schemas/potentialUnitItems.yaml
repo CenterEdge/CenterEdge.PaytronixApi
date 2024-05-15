@@ -1,0 +1,24 @@
+type: object
+properties:
+  itemId:
+    type: string
+    description: Identifier for this item. This identifies the item in the Paytronix database, not the particular line item in the check.
+    example: 1107
+  name:
+    type: string
+    description: Human-readable description of the item.
+    example: Item 3    
+  categories:
+    type: array
+    description: Can be empty. Any categories the menu item is associated with.
+    items:
+      $ref: '.\category.yaml'
+  pricePerUnit:
+    type: decimal
+    description: Per-unit price of the item. Expected to be positive.
+    example: 1.25
+
+required:
+  - itemId
+  - categories
+  - pricePerUnit

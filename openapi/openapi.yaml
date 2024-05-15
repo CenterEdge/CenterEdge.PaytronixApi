@@ -9,8 +9,7 @@ info:
     name: See license agreement
   x-logo:
     url: 'https://raw.githubusercontent.com/CenterEdge/centeredge-resources/master/logo/2022/CenterEdge_Logo_Cmyk.svg'
-  description: >
-  CenterEdge Software Integration with Paytronix API
+  description: CenterEdge Software Integration with Paytronix API
 servers:
   - url: 'http://example.com/api/v1'
 paths:

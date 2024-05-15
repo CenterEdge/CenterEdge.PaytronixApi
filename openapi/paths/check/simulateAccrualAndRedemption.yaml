@@ -16,7 +16,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/checkSimulateAccrual.yaml'
+          $ref: '../../components/schemas/checkSimulateAccrual.yaml'
     required: true
   responses:
-    $ref: '../components/responses/checkSimulateAccrualResponse.yaml'
+    $ref: '../../components/responses/checkSimulateAccrualResponse.yaml'

@@ -14,8 +14,8 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/checkPostAndAccrue.yaml'
+          $ref: '../../components/schemas/checkPostAndAccrue.yaml'
     description: The check to post
     required: true
   responses:
-    $ref: '../components/responses/checkPostAndAccrueResponse.yaml'
+    $ref: '../../components/responses/checkPostAndAccrueResponse.yaml'
