@@ -14,7 +14,8 @@ properties:
     items:
       $ref: '.\category.yaml'
   pricePerUnit:
-    type: decimal
+    type: number
+    format: decimal
     description: Per-unit price of the item. Expected to be positive.
     example: 1.25
 

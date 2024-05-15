@@ -13,7 +13,8 @@ properties:
     description: POS discount number to apply when redeeming this wallet as a reward
     example: 56675
   balance:
-    type: decimal
+    type: number
+    format: decimal
     description: The quantity of the balance remaining on the card after the transaction
     example: 2.00
   expirationDates:
@@ -22,7 +23,8 @@ properties:
     items:
       $ref: './pointExpirationInfo.yaml'
   additionalExpiringBalance:
-    type: decimal
+    type: number
+    format: decimal
     description: The quantity of the reward that will expire later than the returned expirationDates.
     example: 0.00
   rewardType:
@@ -44,10 +46,10 @@ properties:
       - PRECENT_OFF_CATEGORY
       - PER_UNIT_DISCOUNT
   
-  required:
-    - pointName
-    - walletCode
-    - discountObjectNumber
-    - balance
-    - expirationDates
-    - additionalExpiringBalance
+required:
+  - pointName
+  - walletCode
+  - discountObjectNumber
+  - balance
+  - expirationDates
+  - additionalExpiringBalance

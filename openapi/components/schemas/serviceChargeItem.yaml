@@ -21,7 +21,8 @@ properties:
     description: Reference line for the service charge item, if any.
     example: 
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the service charge item purchased. Typically "1". Defaults to 1.
     default: 1.00
     example: 12.00
@@ -36,11 +37,13 @@ properties:
     default: true
     example: true
   price:
-    type: decimal
+    type: number
+    format: decimal
     description: Price of the service charge item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
     example: 12.00
   fullPrice:
-    type: decimal
+    type: number
+    format: decimal
     description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
     example: 12.00
   discounts:
@@ -50,7 +53,8 @@ properties:
     items:
       $ref: '.\discountItem.yaml'
   consumedQuantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Consumed quantity of the service charge item. Defaults to 0.
     default: 0
     example: 0

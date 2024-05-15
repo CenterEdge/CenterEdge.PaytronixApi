@@ -1,8 +1,9 @@
-description: Response from posting a check
-content:
-  application/json:
-    schema:
-      $ref: '../schemas/checkPostResponseInfo.yaml'
-    example:
-      code: badRequest
-      message: Bad Request
+description: |
+  Response from posting a check
+oneOf:
+  - $ref: '../schemas/checkPostResponseInfo.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    success: '../schemas/checkPostResponseInfo.yaml'
+    failure: '../schemas/checkPostResponseInfo.yaml'      

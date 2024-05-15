@@ -17,12 +17,13 @@ properties:
     description: Wallet code.
     example: 1
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity
     example: 1.25
 
-  required:
-    - name
-    - operationType
-    - walletCode
-    - quantity
+required:
+  - name
+  - operationType
+  - walletCode
+  - quantity

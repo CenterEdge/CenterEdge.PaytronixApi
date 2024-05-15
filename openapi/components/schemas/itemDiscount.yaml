@@ -21,7 +21,8 @@ properties:
     description: Directly corresponds to the itemId field of a menu or combo item in the request.
     example: Item 3
   discount:
-    type: decimal
+    type: number
+    format: decimal
     description: Full amount by which the target item should be discounted.
     example: 1.25
   quantityDiscounted:
@@ -29,7 +30,8 @@ properties:
     description: Quantity of the line item which is to be discounted.
     example: 1
   unitDiscount:
-    type: decimal
+    type: number
+    format: decimal
     description: This is the discount value divided by the quantityDiscounted. Usually ignored
     example: 1.25
   discountType:
@@ -46,7 +48,8 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant.
     example: 50
   quantityRedeemed:
-    type: decimal
+    type: number
+    format: decimal
     description: Actual number of points in the Paytronix wallet which will be redeemed when the transaction is finalized.
     example: 1.50
   applyAutomatically:
@@ -58,7 +61,7 @@ properties:
     description: ID of coupon, only returned in calls to simulateCoupon.
     example: 1122
   soonestExpirationDate:
-    type: date
+    type: string
     description: The earliest or soonest expiration date out of a list of reward point expiration dates. The format is yyyy-mm-dd.
     example: '2024-10-21'
   priority:

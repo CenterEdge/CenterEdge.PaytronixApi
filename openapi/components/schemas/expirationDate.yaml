@@ -1,7 +1,8 @@
 type: object
 properties:
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Point amount to be expired.
     example: 15.25
   date:

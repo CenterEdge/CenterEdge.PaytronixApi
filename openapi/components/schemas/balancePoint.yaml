@@ -8,7 +8,8 @@ properties:
     type: integer
     description: See walletType values in the section on LoadMapWallet.
   points:
-    type: decimal
+    type: number
+    format: decimal
     description: Point balance.
     example: 25.00
   walletCode:
@@ -18,7 +19,7 @@ properties:
   expirationDates:
     type: array
     items:
-      ref: '.\expirationDate.yaml'
+      $ref: '.\expirationDate.yaml'
 
 required:
   - pointName

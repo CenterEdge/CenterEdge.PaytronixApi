@@ -4,5 +4,5 @@ properties:
     type: string
     example: noWorkSuccess
 
-  required:
-    - result
+required:
+  - result

@@ -13,7 +13,8 @@ properties:
     description: Name of item.
     example: Large Drink
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity.
     example: 2.00
 

@@ -35,11 +35,13 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant.
     example: 50
   quantityRedeemed:
-    type: decimal
+    type: number
+    format: decimal
     description: Actual number of points in the Paytronix wallet which will be redeemed when the transaction is finalized.
     example: 1.50
   totalDiscounted:
-    type: decimal
+    type: number
+    format: decimal
     description: Total value discounted.
     example: 1.25
   applyAutomatically:

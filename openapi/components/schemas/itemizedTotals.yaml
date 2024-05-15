@@ -9,7 +9,8 @@ properties:
     description: Identifier for the itemizer
     example: Local sales tax  
   total:
-    type: decimal
+    type: number
+    format: decimal
     description: Itemized amount
     example: 1.00
 

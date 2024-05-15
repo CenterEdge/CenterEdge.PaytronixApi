@@ -13,12 +13,13 @@ properties:
     description: Wallet code.
     example: 1
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity
     example: 1.25
 
-  required:
-    - rewardType
-    - discountItemId
-    - walletCode
-    - quantity
+required:
+  - rewardType
+  - discountItemId
+  - walletCode
+  - quantity

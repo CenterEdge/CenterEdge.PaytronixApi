@@ -5,7 +5,8 @@ properties:
     description:  The ID of the item to which this discount could be applied.
     example: Item 3
   unitDiscount:
-    type: decimal
+    type: number
+    format: decimal
     description: |
       Represents the per-unit discount that should be applied to an applicable item, 
       e.g. if the value is 1.00 and there are two units of the item, the item’s total price should total discount should be reduced by 2.00. This will be a positive number.

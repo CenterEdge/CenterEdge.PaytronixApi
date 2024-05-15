@@ -93,7 +93,7 @@ properties:
     type: array
     description: The list of visible points changes..    
     items:
-      $ref: './changedPointInfo.yaml'
+      $ref: './pointInfo.yaml'
   posMessages:
     type: array
     description: A list of messages to be displayed to the cashier.
@@ -101,50 +101,24 @@ properties:
     type: string
     description: A URL where guests can login to see their balances and transaction history.
 
-  required:
-    - result
-    - checkNumber
-    - openTime
-    - pxTransactionId
-    - itemDiscounts
-    - multiItemDiscounts
-    - subtotalDiscounts
-    - serviceChergeDiscounts
-    - rewardsToRemove
-    - availableUnitDiscounts
-    - receiptText
-    - customerName
-    - tierName
-    - printedCardNumber
-    - discountsNotApplied
-    - pointBalances
-    - rewardBalances
-    - changedWalletContents
-    - posMessages
-    - guestWebSite
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  required:
-    - result
-    - reply
-    - customerName
-    - tierName
-    - printedCardNumber
-    - pointBalances
-    - rewardBalances
-    - changedWalletContents
-    - posMessages
-    - guestWebSite
-    - receiptText
+required:
+  - result
+  - checkNumber
+  - openTime
+  - pxTransactionId
+  - itemDiscounts
+  - multiItemDiscounts
+  - subtotalDiscounts
+  - serviceChergeDiscounts
+  - rewardsToRemove
+  - availableUnitDiscounts
+  - receiptText
+  - customerName
+  - tierName
+  - printedCardNumber
+  - discountsNotApplied
+  - pointBalances
+  - rewardBalances
+  - changedWalletContents
+  - posMessages
+  - guestWebSite

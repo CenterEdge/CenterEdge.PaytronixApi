@@ -57,19 +57,22 @@ properties:
     description: 6-digit random value, e.g. "683290".
     example: 683290
   pxTransactionId:
-    type: long
+    type: integer
     description: Unique 64-bit signed integer value to identify this transaction, this can be used to reverse a previous transaction.
     example: 148240240
   svCurrentBalance:
-    type: decimal
+    type: number
+    format: decimal
     description: Balance of Stored Value wallet.
     example: 25.00 
   svTransactionAmount:
-    type: decimal
+    type: number
+    format: decimal
     description: Transaction amount of Stored Value wallet.
     example: 25.00
   svPreviousBalance:
-    type: decimal
+    type: number
+    format: decimal
     description: Previous balance of Stored Value wallet.
     example: 5.00 
   svriFlag:

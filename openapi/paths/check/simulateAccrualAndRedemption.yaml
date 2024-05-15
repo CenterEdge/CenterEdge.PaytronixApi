@@ -19,4 +19,11 @@ post:
           $ref: '../../components/schemas/checkSimulateAccrual.yaml'
     required: true
   responses:
-    $ref: '../../components/responses/checkSimulateAccrualResponse.yaml'
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/checkSimulateAccrualResponse.yaml'
+    '401':
+      $ref: '../../components/responses/Unauthorized.yaml'

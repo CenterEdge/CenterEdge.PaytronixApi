@@ -5,7 +5,8 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant
     example: 4382
   amount:
-    type: decimal
+    type: number
+    format: decimal
     description: Represents either the discount amount if applied to an item, or the wallet balance if the reward is applied to the transaction.
     example: 1.25
 

@@ -5,7 +5,8 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant
     example: 1
   amount:
-    type: decimal
+    type: number
+    format: decimal
     description: The amount to be redeemed from the wallet
     example: 1.00
 

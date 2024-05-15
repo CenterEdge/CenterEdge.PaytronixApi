@@ -21,11 +21,13 @@ properties:
     description:  Directly corresponds to the itemId field of a ServiceChargeItem in the request.
     example: Item 3
   discount:
-    type: decimal
+    type: number
+    format: decimal
     description: Full amount by which the target item should be discounted.
     example: 1.25
   quantityDiscounted:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the line item which is to be discounted.
     example: 1.00
   discountType:
@@ -42,7 +44,8 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant.
     example: 50
   quantityRedeemed:
-    type: decimal
+    type: number
+    format: decimal
     description: Actual number of points in the Paytronix wallet which will be redeemed when the transaction is finalized.
     example: 1.50
   applyAutomatically:

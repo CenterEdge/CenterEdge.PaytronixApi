@@ -9,15 +9,18 @@ properties:
     description: Directly corresponds to the itemId field of a menu or combo item in the request.
     example: Item 2 
   discount:
-    type: decimal
+    type: number
+    format: decimal
     description: Full amount by which the target item should be discounted.
     example: 1.35
   quantityDiscounted:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the line item which is to be discounted.
     example: 1.00
   unitDiscount:
-    type: decimal
+    type: number
+    format: decimal
     description: This is the discount value divided by the quantityDiscounted.
     example: 1.35
 

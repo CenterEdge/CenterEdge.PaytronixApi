@@ -9,6 +9,6 @@ properties:
     description: Printed card number associated with the activated account.
     example: 6195585
 
-  required:
-    - result
-    - printedCardNumber
+required:
+  - result
+  - printedCardNumber

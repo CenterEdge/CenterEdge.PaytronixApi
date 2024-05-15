@@ -25,7 +25,8 @@ properties:
     description: Reference line for the discount item, if any.
     example: 
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the discount item purchased. Typically "1". Defaults to 1.
     default: 1.00
     example: 12.00
@@ -40,11 +41,13 @@ properties:
     default: true    
     example: true
   price:
-    type: decimal
+    type: number
+    format: decimal
     description: Price of the discount item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
     example: 12.00
   fullPrice:
-    type: decimal
+    type: number
+    format: decimal
     description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
     example: 12.00
   discountSource:
@@ -60,7 +63,8 @@ properties:
     description: A numeric identifier for a specific type of discount, unique for a given merchant. Populated based on the walletCode field in the ItemDiscount, SubtotalDiscount, or AvailableUnitDiscount which was applied. Must be present for Loyalty and Coupon Discounts
     example: 123
   walletQuantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the wallet which was used. Populated based on the quantityRedeemed field in the ItemDiscount or SubtotalDiscount objects, or the unitDiscount field in a PossibleUse, depending on how the discount was applied to the check. Must be present for Loyalty Discounts
     example: 1
   couponId:

@@ -21,7 +21,8 @@ properties:
     items:
       $ref: './possibleDiscount.yaml'  
   maxEligibleUnits:
-    type: decimal
+    type: number
+    format: decimal
     description: Maximum units to which this discount can be applied.
     example: 3
   applyAutomatically:

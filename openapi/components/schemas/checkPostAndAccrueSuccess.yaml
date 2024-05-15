@@ -33,7 +33,7 @@ properties:
     type: array
     description: The list of visible points changes.
     items:
-      $ref: './changedPointInfo.yaml'
+      $ref: './pointInfo.yaml'
   posMessages:
     type: array
     description: A list of messages to be displayed to the cashier
@@ -48,15 +48,15 @@ properties:
       items:
         type: string
 
-  required:
-    - result
-    - reply
-    - customerName
-    - tierName
-    - printedCardNumber
-    - pointBalances
-    - rewardBalances
-    - changedWalletContents
-    - posMessages
-    - guestWebSite
-    - receiptText
+required:
+  - result
+  - reply
+  - customerName
+  - tierName
+  - printedCardNumber
+  - pointBalances
+  - rewardBalances
+  - changedWalletContents
+  - posMessages
+  - guestWebSite
+  - receiptText

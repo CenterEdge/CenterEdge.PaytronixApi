@@ -21,7 +21,8 @@ properties:
     description: Reference line for the combo item, if any.
     example: 
   quantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Quantity of the combo item purchased. Typically "1". Defaults to 1.
     default: 1.00
     example: 12.00
@@ -42,11 +43,13 @@ properties:
     default: true
     example: true
   price:
-    type: decimal
+    type: number
+    format: decimal
     description: Price of the combo item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
     example: 12.00
   fullPrice:
-    type: decimal
+    type: number
+    format: decimal
     description: If the price varies from the “base price” due to discounting, couponing, or similar, then this field should contain the base price before discounting.
     example: 12.00
   modifiers:
@@ -67,7 +70,8 @@ properties:
     items:
       $ref: '.\menuItem.yaml'
   consumedQuantity:
-    type: decimal
+    type: number
+    format: decimal
     description: Consumed quantity of the combo item. Defaults to 0.
     default: 0
     example: 0
