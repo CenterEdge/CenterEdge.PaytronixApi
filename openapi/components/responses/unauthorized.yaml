@@ -3,6 +3,3 @@ content:
   application/json:
     schema:
       $ref: '../schemas/error.yaml'
-    example:
-      code: unauthorized
-      message: Unauthorized
