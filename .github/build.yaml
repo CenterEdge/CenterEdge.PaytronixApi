@@ -1,4 +1,68 @@
-buildSdk:
+name: Build
+
+on:
+  push:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  buildSpec:
+    name: Build Spec
+    runs-on: ubuntu-latest
+    outputs:
+      semVer: ${{ steps.gitversion.outputs.semVer }}
+      legacySemVerPadded: ${{ steps.gitversion.outputs.legacySemVerPadded }}
+      nuGetVersionV2: ${{ steps.gitversion.outputs.nuGetVersionV2 }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x # for GitVersion
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v1
+      with:
+        versionSpec: "5.12.0"
+
+    - name: Determine Version
+      id: gitversion
+      uses: gittools/actions/gitversion/execute@v1
+      with:
+        useConfigFile: true
+        configFilePath: "GitVersion.yml"
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Set Version
+      run: sed -i 's/0.0.0-replace/${{ steps.gitversion.outputs.legacySemVerPadded }}/g' openapi/openapi.yaml
+
+    - name: Restore
+      run: npm ci
+
+    - name: Test
+      run: npm run test
+
+    - name: Build
+      run: npm run build
+
+    - name: Archive
+      uses: actions/upload-artifact@v4
+      with:
+        name: spec
+        path: |
+          dist
+
+  buildSdk:
     name: Build SDK
     needs:
     - buildSpec
@@ -16,7 +80,7 @@ buildSdk:
         path: dist
 
     - name: Build
-      run: yardarm generate -i ./dist/centeredge-paytronixapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdge.PaytronixApi -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.NewtonsoftJson --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
+      run: yardarm generate -i ./dist/centeredge-cardsystemapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdgeCardSystems.Api -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.NewtonsoftJson --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
 
     - name: Push
       working-directory: ./dist
