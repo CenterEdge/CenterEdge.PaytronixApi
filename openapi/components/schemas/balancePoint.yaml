@@ -19,7 +19,7 @@ properties:
   expirationDates:
     type: array
     items:
-      $ref: '.\expirationDate.yaml'
+      $ref: './expirationDate.yaml'
 
 required:
   - pointName
