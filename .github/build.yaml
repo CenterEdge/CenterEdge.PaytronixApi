@@ -1,4 +1,27 @@
-  buildSdk:
+buildSdk:
     name: Build SDK
     needs:
     - buildSpec
+
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/centeredge/yardarm:0.4.1
+      options: --user root:root
+
+    steps:
+    - name: Download Spec
+      uses: actions/download-artifact@v4
+      with:
+        name: spec
+        path: dist
+
+    - name: Build
+      run: yardarm generate -i ./dist/centeredge-cardsystemapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdgeCardSystems.Api -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.NewtonsoftJson --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
+
+    - name: Push
+      working-directory: ./dist
+      # Publish CI packages from PRs and tagged releases
+      if: ${{ startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/pull/') }}
+      run: >-
+        dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github https://nuget.pkg.github.com/CenterEdge/index.json
+        && dotnet nuget push **/*.${{ needs.buildSpec.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
