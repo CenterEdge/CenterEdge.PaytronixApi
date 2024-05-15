@@ -16,7 +16,7 @@ buildSdk:
         path: dist
 
     - name: Build
-      run: yardarm generate -i ./dist/centeredge-cardsystemapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdgeCardSystems.Api -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.NewtonsoftJson --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
+      run: yardarm generate -i ./dist/centeredge-paytronixapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdge.PaytronixApi -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.NewtonsoftJson --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
 
     - name: Push
       working-directory: ./dist
