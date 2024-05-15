@@ -23,4 +23,4 @@ post:
           schema:
             $ref: '../../components/responses/checkPostResponse.yaml'
     '401':
-      $ref: '../../components/responses/Unauthorized.yaml'
+      $ref: '../../components/responses/unauthorized.yaml'

@@ -2,7 +2,7 @@ type: object
 properties:
   headerInfo:
     type: object
-    $ref: '.\headerInfo.yaml'
+    $ref: './headerInfo.yaml'
   pxTransactionId:
     type: string
     description: The pxTransactionId from reply to transaction to reverse.

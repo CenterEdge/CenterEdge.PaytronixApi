@@ -86,17 +86,17 @@ properties:
   activationItem:
     type: object
     description: What POS item to insert into the check for this activation. Only present for activations.
-    $ref: '.\activationItem.yaml'
+    $ref: './activationItem.yaml'
   balancePoints:
     type: array
     description: Point balances that cannot be directly redeemed.
     items:
-      $ref: '.\balancePoint.yaml'
+      $ref: './balancePoint.yaml'
   rewardPoints:
     type: array
     description: Point balances that can be redeemed.
     items:
-      $ref: '.\balancePoint.yaml'
+      $ref: './balancePoint.yaml'
   anonymousAccountToken:
     type: string
     description: Unique String value to identify the guest.

@@ -25,4 +25,4 @@ post:
           schema:
             $ref: '../../components/responses/checkPostAndAccrueResponse.yaml'
     '401':
-      $ref: '../../components/responses/Unauthorized.yaml'
+      $ref: '../../components/responses/unauthorized.yaml'

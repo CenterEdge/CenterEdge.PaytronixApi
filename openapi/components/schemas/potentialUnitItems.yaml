@@ -12,7 +12,7 @@ properties:
     type: array
     description: Can be empty. Any categories the menu item is associated with.
     items:
-      $ref: '.\category.yaml'
+      $ref: './category.yaml'
   pricePerUnit:
     type: number
     format: decimal

@@ -22,4 +22,4 @@ get:
           schema:
             $ref: '../../components/responses/smsEnrollResponse.yaml'
     '401':
-      $ref: '../../components/responses/Unauthorized.yaml'
+      $ref: '../../components/responses/unauthorized.yaml'

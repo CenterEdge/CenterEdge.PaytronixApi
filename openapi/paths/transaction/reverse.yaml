@@ -25,4 +25,4 @@ get:
           schema:
             $ref: '../../components/responses/transactionReply.yaml'
     '401':
-      $ref: '../../components/responses/Unauthorized.yaml'
+      $ref: '../../components/responses/unauthorized.yaml'
