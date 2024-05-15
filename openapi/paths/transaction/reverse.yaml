@@ -17,4 +17,5 @@ get:
     required: true
   security:
     - bearer_auth: []
-  responses: ?
+  responses:
+    $ref: '../components/responses/transactionReply.yaml'

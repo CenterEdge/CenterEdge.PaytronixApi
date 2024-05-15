@@ -1,0 +1,63 @@
+type: object
+properties:
+  id:
+    type: string
+    description: An identifier for this discount, as in a coupon number. Not guaranteed to be unique.
+    example: 32
+  name:
+    type: string
+    description: Human-readable name of discount.
+    example: Two Dollars Off Item 3
+  referenceLine:
+    type: string
+    description: Reference line for the service charge discount, if any.
+    example: 5
+  posItemId:
+    type: string
+    description:  Unique identifier for item in the point of sale system.
+    example: Large Drink
+  menuItemId:
+    type: string
+    description:  Directly corresponds to the itemId field of a ServiceChargeItem in the request.
+    example: Item 3
+  discount:
+    type: decimal
+    description: Full amount by which the target item should be discounted.
+    example: 1.25
+  quantityDiscounted:
+    type: decimal
+    description: Quantity of the line item which is to be discounted.
+    example: 1.00
+  discountType:
+    type: string
+    description: One of “Percent”, “Dollar”, “ReducePrice”, “PerUnit”. Can be ignored.
+    example: Dollar
+  walletCode:
+    type: integer
+    description: A numeric identifier for a specific type of discount, unique for a given merchant.
+    example: 50
+  quantityRedeemed:
+    type: decimal
+    description: Actual number of points in the Paytronix wallet which will be redeemed when the transaction is finalized.
+    example: 1.50
+  applyAutomatically:
+    type: boolean
+    description: Automatically apply discounts.
+    example: true
+  priority:
+    type: integer
+    description: The priority in which the reward should be applied.
+    example: 1
+
+required:
+  - id
+  - name
+  - posItemId
+  - menuItemId
+  - discount
+  - quantityDiscounted
+  - discountType
+  - walletCode
+  - quantityRedeemed
+  - applyAutomatically
+  - priority

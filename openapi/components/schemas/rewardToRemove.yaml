@@ -1,0 +1,18 @@
+type: object
+properties:
+  itemId:
+    type: string
+    description:  A numeric identifier for the specific reward to be removed.
+    example: 863
+  reason:
+    type: string
+    description: States the reason why the reward was unable to be applied.
+    example: Customer satisfaction
+  referenceLine:
+    type: string
+    description:  Directly corresponds to the referenceLine field of a menu or combo item in the request, and indicates that the discount should be applied to that specific item.
+    example: 31324
+
+required:
+  - itemId
+  - reason

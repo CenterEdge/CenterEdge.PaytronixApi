@@ -22,7 +22,8 @@ properties:
   autoActivateCard:
     type: boolean
     description: True if the card should automatically be activated if it is not already active. Defaults to false
-    example: True
+    default: false
+    example: false
   terminal:
     type: string
     description: Number of the POS terminal where the check was submitted for accrual, usually by closing the check. Use "0" if the terminal is unknown or unavailable. Maximum of 100 characters.

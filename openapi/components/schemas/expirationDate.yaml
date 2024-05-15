@@ -1,0 +1,13 @@
+type: object
+properties:
+  quantity:
+    type: decimal
+    description: Point amount to be expired.
+    example: 15.25
+  date:
+    type: string
+    description: Expiration date.
+
+required:
+  - quantity
+  - date

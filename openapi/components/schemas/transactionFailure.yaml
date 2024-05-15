@@ -1,0 +1,26 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Result of the call. Must be 'failure'.
+    example: failure
+  responseCode:
+    type: integer
+    description: a value between 600 and 699(inclusive)
+    example: 626
+  responseMessage:
+    type: string
+    description: Various messages based on responseCode.
+  errorCode:
+    type: string
+    description: Error code
+  errorMessage:
+    type: string
+    description: Human-readable error message
+    
+required:
+  - result
+  - responseCode
+  - responseMessage
+  - errorCode
+  - errorMessage

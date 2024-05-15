@@ -19,4 +19,4 @@ post:
           $ref: '../components/schemas/checkSimulateAccrual.yaml'
     required: true
   responses:
-    $ref: '../components/schemas/checkSimulateAccrualResponse.yaml'
+    $ref: '../components/responses/checkSimulateAccrualResponse.yaml'

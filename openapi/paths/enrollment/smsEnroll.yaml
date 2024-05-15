@@ -15,11 +15,4 @@ get:
   security:
     - bearer_auth: []
   responses:
-    '200':
-      description: Ok
-      content:
-        application/json:
-          schema:
-            $ref: '../components/schemas/Capabilities.yaml'
-    '401':
-      $ref: '../components/responses/Unauthorized.yaml'
+    $ref: '../components/responses/smsEnrollResponse.yaml'

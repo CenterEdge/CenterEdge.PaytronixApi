@@ -31,6 +31,9 @@ properties:
   itemizedTotals:
     type: array
     description:  Can be empty. Additional POS-specific itemized totals, such as totals by reporting group or similar. Defaults to empty.
+    default: []
+    items:
+      $ref: './itemizedTotals.yaml'  
 
 required:
   - subTotal

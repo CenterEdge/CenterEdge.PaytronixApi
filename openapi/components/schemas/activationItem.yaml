@@ -1,0 +1,24 @@
+type: object
+properties:
+  itemId:
+    type: string
+    description: POS Item ID.See LoadMapWallet above for how to interpret this value.
+    example: Item 3
+  itemType:
+    type: integer
+    description: POS Item Type. See LoadMapWallet above for a table of values.
+    example: 43
+  itemName:
+    type: string
+    description: Name of item.
+    example: Large Drink
+  quantity:
+    type: decimal
+    description: Quantity.
+    example: 2.00
+
+required:
+  - itemId
+  - itemType
+  - itemName
+  - quantity

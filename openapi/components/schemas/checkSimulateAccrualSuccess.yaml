@@ -1,0 +1,146 @@
+type: object
+properties:
+  result:
+    type: string
+    example: success
+  checkNumber:
+    type: string
+    description: The check number.
+    example: 5657
+  openTime:
+    type: string
+    description:  Date and time the check was opened, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
+    example: 0001-01-01 00:00:00 -00:00
+  uniqueIdentifier:
+    type: string
+    description: |
+      Unique check identification number. Paytronix requires that this is unique within the business day at the particular store. 
+      This field should be entered if and only if ‘number’ field isn’t guaranteed to be unique within the business day at the particular store.
+    example: '#f62bed51-efea-c1fb-9336-a4e4cf934100'
+  pxTransactionId:
+    type: string
+    description: Paytronix transaction ID.
+    example: 11269326  
+  itemDiscounts:
+    type: array
+    description: The list of per-item discounts that could be applied to the check.
+    items:
+      $ref: './itemDiscount.yaml'
+  multiItemDiscounts:
+    type: array
+    description: The list of multi-item discounts that could be applied to the check..    
+    items:
+      $ref: './multiItemDiscount.yaml'
+  subtotalDiscounts:
+    type: array
+    description: The list of applicable discounts which concern the check subtotal, or the whole check.
+    items:
+      $ref: './subtotalDiscount.yaml'
+  serviceChargeDiscounts:
+    type: array
+    description: The list of serviceCharge discounts that could be applied to the check.
+    items:
+      $ref: './serviceChargeDiscount.yaml'
+  rewardsToRemove:
+    type: array
+    description: The list of rewards specified with the request that are inapplicable for the given check.
+    items:
+      $ref: './rewardToRemove.yaml'
+  availableUnitDiscounts:
+    type: array
+    description: The list of unit discounts which have not been applied, but could be.
+    items:
+      $ref: './availableUnitDiscount.yaml'
+  receiptText:
+    type: array
+    description: This is a mapping from String labels to sets (or lists) of receipt lines.
+  customerName:
+    type: string
+    description: The customer’s name.
+    example: Joe Smith
+  tierName:
+    type: string
+    description: The tier label for this customer
+    example: VIP
+  printedCardNumber:
+    type: string
+    description: The printed card number associated with the account.
+    example: 011235813213455
+  accountCode:
+    type: integer
+    description: Unique identifier for the account associated with the accrual.
+    example: 123456
+  discountsNotApplied:
+    type: array
+    description: The list of rewards specified in the request that could not be applied to the given check.
+    items:
+      $ref: './rewardNotApplied.yaml'
+  pointBalances:
+    type: array
+    description: The list of the remaining quantity of all points on the given card.
+    items:
+      $ref: './pointInfo.yaml'
+  rewardBalances:
+    type: array
+    description: The list of the remaining quantity of all rewards on the given card.   
+    items:
+      $ref: './rewardPointInfo.yaml'
+  changedWalletContents:
+    type: array
+    description: The list of visible points changes..    
+    items:
+      $ref: './changedPointInfo.yaml'
+  posMessages:
+    type: array
+    description: A list of messages to be displayed to the cashier.
+  guestWebSite:
+    type: string
+    description: A URL where guests can login to see their balances and transaction history.
+
+  required:
+    - result
+    - checkNumber
+    - openTime
+    - pxTransactionId
+    - itemDiscounts
+    - multiItemDiscounts
+    - subtotalDiscounts
+    - serviceChergeDiscounts
+    - rewardsToRemove
+    - availableUnitDiscounts
+    - receiptText
+    - customerName
+    - tierName
+    - printedCardNumber
+    - discountsNotApplied
+    - pointBalances
+    - rewardBalances
+    - changedWalletContents
+    - posMessages
+    - guestWebSite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  required:
+    - result
+    - reply
+    - customerName
+    - tierName
+    - printedCardNumber
+    - pointBalances
+    - rewardBalances
+    - changedWalletContents
+    - posMessages
+    - guestWebSite
+    - receiptText

@@ -27,15 +27,18 @@ properties:
   quantity:
     type: decimal
     description: Quantity of the discount item purchased. Typically "1". Defaults to 1.
+    default: 1.00
     example: 12.00
   isVoided:
     type: boolean
     description: True if the discount item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
-    example: True
+    default: false
+    example: false
   isTaxable:
     type: boolean
     description: True if the discount item is a taxable item which contributed to the tax total. Defaults to true.
-    example: True
+    default: true    
+    example: true
   price:
     type: decimal
     description: Price of the discount item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.

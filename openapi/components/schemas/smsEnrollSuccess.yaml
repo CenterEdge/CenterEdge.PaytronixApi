@@ -1,0 +1,14 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Must be 'success'.
+    example: success
+  printedCardNumber:
+    type: string
+    description: Printed card number associated with the activated account.
+    example: 6195585
+
+  required:
+    - result
+    - printedCardNumber

@@ -10,71 +10,20 @@ info:
   x-logo:
     url: 'https://raw.githubusercontent.com/CenterEdge/centeredge-resources/master/logo/2022/CenterEdge_Logo_Cmyk.svg'
   description: >
-    This document represents an API to be implemented by a third-party card system to
-    allow integration with CenterEdge Advantage. The CenterEdge Advantage system will
-    make requests to this API and receive responses back.
-
-    This integration is designed to allow the source of truth for key card system data
-    to continue to reside with the card system, such as card numbers, card balances,
-    and transaction history.
-
-    Implementing this API is not the only requirement for an integration with CenterEdge
-    Advantage. Other potential requirements include:
-
-    - CenterEdge support for reading/parsing the card system's magstripes, barcodes, or
-      NFC chips
-    - Integration from the card system to CenterEdge APIs to post card sales at kiosks or
-      from other sales channels
-    - Testing and certification of the integration by CenterEdge
-
-    Authentication is managed using the `/login` endpoint, which returns a bearer token. This
-    token is supplied to subsequent requests using the `Authorization` header, i.e.
-    `Authorization: Bearer the-bearer-token`. The token itself is opaque to CenterEdge, but may
-    be something like a JSON Web Token (JWT). It is expected that this token may expire at some
-    point, after which API calls should return a 401 Unauthorized. This will cause CenterEdge
-    to request a new token and try again.
-tags:
-  - name: Login
-    description: APIs related to authentication
-  - name: Capabilities
-    description: APIs to request capabilities of other APIs
-  - name: Cards
-    description: APIs to manage cards
-  - name: Games
-    description: APIs to get information about games
-  - name: Privileges
-    description: APIs related to privileges
-  - name: Time Play
-    description: APIs related to time plays
+  CenterEdge Software Integration with Paytronix API
 servers:
   - url: 'http://example.com/api/v1'
 paths:
-  '/capabilities':
-    $ref: 'paths/capabilities.yaml'
-  '/cards/bulkIssue':
-    $ref: 'paths/cards@bulkIssue.yaml'
-  '/cards/{cardNumber}':
-    $ref: 'paths/cards@{cardNumber}.yaml'
-  '/cards/{cardNumber}/combine':
-    $ref: 'paths/cards@{cardNumber}@combine.yaml'
-  '/cards/{cardNumber}/pin':
-    $ref: 'paths/cards@{cardNumber}@pin.yaml'
-  '/cards/{cardNumber}/transactions':
-    $ref: 'paths/cards@{cardNumber}@transactions.yaml'
-  '/cards/{cardNumber}/transactions/{transactionId}':
-    $ref: 'paths/cards@{cardNumber}@transactions@{transactionId}.yaml'
-  '/cardNumberFormats':
-    $ref: 'paths/cardNumberFormats.yaml'
-  '/games':
-    $ref: 'paths/games.yaml'
-  '/games/transactions':
-    $ref: 'paths/games@transactions.yaml'
-  '/login':
-    $ref: 'paths/login.yaml'
-  '/privilegeGroups':
-    $ref: 'paths/privilegeGroups.yaml'
-  '/timePlayGroups':
-    $ref: 'paths/timePlayGroups.yaml'
+  '/check/post':
+    $ref: 'paths/check/post.yaml'
+  '/check/postAndAccruePointsWithRedeem':
+    $ref: 'paths/check/postAndAccruePointsWithRedeem.yaml'
+  '/check/simulateAccrualAndRedemption':
+    $ref: 'paths/check/simulateAccrualAndRedemption.yaml'
+  '/enrollment/smsEnroll':
+    $ref: 'paths/enrollment/smsEnroll.yaml'
+  '/transaction/reverse':
+    $ref: 'paths/transaction/reverse.yaml' 
 components:
   securitySchemes:
     bearer_auth:

@@ -1,0 +1,42 @@
+type: object
+properties:
+  id:
+    type: string
+    description:  An identifier for this discount, as in a coupon number. Not guaranteed to be unique.
+    example: 43
+  name:
+    type: string
+    description: Human-readable name of discount
+    example: VIP Discount
+  referenceLine:
+    type: string
+    description:  Directly corresponds to the referenceLine field of a menu or combo item in the request, and indicates that the discount should be applied to that specific item.
+    example: 31324
+  walletCode:
+    type: integer
+    description: A numeric identifier for a specific type of discount, unique for a given merchant.
+    example: 50
+  possibleUses:
+    type: array
+    items:
+      $ref: './possibleDiscount.yaml'  
+  maxEligibleUnits:
+    type: decimal
+    description: Maximum units to which this discount can be applied.
+    example: 3
+  applyAutomatically:
+    type: boolean
+    description: Automatically apply discounts.
+    example: true
+  priority:
+    type: integer
+    description: The priority in which the reward should be applied.
+    example: 1
+
+required:
+  - id
+  - name
+  - walletCode
+  - possibleUses
+  - applyAutomatically
+  - priority

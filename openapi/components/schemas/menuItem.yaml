@@ -23,19 +23,25 @@ properties:
   quantity:
     type: decimal
     description: Quantity of the menu item purchased. Typically "1". Defaults to 1.
+    default: 1.00
     example: 12.00
   categories:
     type: array
     description: Can be empty. Any categories the menu item is associated with. Defaults to empty.
+    default: []
     example: [{"categoryType": "major", "id": "-1"}]
+    items:
+      $ref: '.\category.yaml'
   isVoided:
     type: boolean
     description: True if the menu item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
-    example: True
+    default: false
+    example: false
   isTaxable:
     type: boolean
     description: True if the menu item is a taxable item which contributed to the tax total. Defaults to true.
-    example: True
+    default: true
+    example: true
   price:
     type: decimal
     description: Price of the menu item. Typically a positive amount, unless voided. Should be calculated as unit price * quantity. This should not include the prices of the modifiers.
@@ -47,14 +53,19 @@ properties:
   modifiers:
     type: array
     description: Can be empty. A list of any modifiers (such as condiments) attached to the menu item. Defaults to empty.
-    example: []
+    default: []    
+    items:
+      $ref: '.\modifier.yaml'
   discounts:
     type: array
     description: Can be empty. A list of any discounts that apply to the single menu item only, applicable for instance if a coupon has been applied. Defaults to empty.
-    example: []
+    default: []    
+    items:
+      $ref: '.\discountItem.yaml'
   consumedQuantity:
     type: decimal
     description: Consumed quantity of the menu item. Defaults to 0.
+    default: 0
     example: 0
     
 required:

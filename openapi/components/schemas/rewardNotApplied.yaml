@@ -1,0 +1,37 @@
+type: object
+properties:
+  message:
+    type: string
+    description: |
+      The message to return to the guest with the reason the specified reward was not applied, this is custom language set by the merchant. Defaults to "Invalid"
+      The following reason codes are used for this object
+      reducedPriceGreaterThanTotal: Message for when the reward’s ‘Reduce To’ price is higher than the corresponding item’s total cost
+      invalidWalletCode: Message for when the reward’s wallet code is invalid
+      itemNotInCheck: Message for when there is no item in the check corresponding to the reward
+      chosenRewardAmountZeroOrNegative: Message for when the requested reward quantity is zero or negative
+      chosenRewardAmountTooHigh: Message for when the requested reward quantity is higher than the available reward quantity
+      minimumSpendNotMet: Message for when minimum spend amount is not met for the given check
+      minimumSpendAlreadyApplied: Message for when a minimum spend reward has already been applied to the given check
+      percentDiscountAlreadyApplied: Message for when a percent discount has already been applied to the given check
+      negativeSubtotal: Message for when applying the reward would result in a negative check total
+      Invalid: General message for when a reward is invalid
+    default: invalid
+    example: Minimum spend amount not met
+  reason:
+    type: string
+    description: Reason code used to determine which message to send.
+    example: minimumSpendNotMet
+  walletCode:
+    type: string
+    description: A numeric identifier for the specified discount that could not be applied, unique for a given merchant.
+    example: 3
+  walletName:
+    type: string
+    description: The name of the reward that could not be applied.
+    example: Free Coffee
+
+required:
+  - message
+  - reason
+  - walletCode
+  - walletname

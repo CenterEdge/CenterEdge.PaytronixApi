@@ -7,6 +7,8 @@ properties:
   chosenRewards:
     type: array
     description: List of manually chosen rewards.
+    items:
+      $ref: './chosenReward.yaml'  
     
 required:
   - mode

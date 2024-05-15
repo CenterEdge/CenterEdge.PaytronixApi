@@ -1,0 +1,28 @@
+type: object
+properties:
+  pointName:
+    type: string
+    description: Result of the call. Must be 'authorizedSuccess'.
+    example: authorizedSuccess
+  pointType:
+    type: integer
+    description: See walletType values in the section on LoadMapWallet.
+  points:
+    type: decimal
+    description: Point balance.
+    example: 25.00
+  walletCode:
+    type: integer
+    description: Wallet Code.
+    example: 863
+  expirationDates:
+    type: array
+    items:
+      ref: '.\expirationDate.yaml'
+
+required:
+  - pointName
+  - pointType
+  - points
+  - walletCode
+  - expirationDates

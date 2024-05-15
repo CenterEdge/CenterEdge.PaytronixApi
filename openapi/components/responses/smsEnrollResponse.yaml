@@ -1,0 +1,10 @@
+description: |
+  Response information from an sms enrollment call.
+oneOf:
+  - $ref: './schemas/smsEnrollSuccess.yaml'
+  - $ref: './schemas/error.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    authorizedSuccess: './schemas/smsEnrollSuccess.yaml'
+    failure: './schemas/error.yaml.yaml'

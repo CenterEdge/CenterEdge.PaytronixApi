@@ -1,0 +1,116 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Result of the call. Must be 'denied'.
+    example: denied
+  errorCode:
+    type: integer
+  errorMessage:
+    type: string
+  responseCode:
+    type: integer
+    description: A value between 300 and 399(inclusive).
+    example: 300
+  responseMessage:
+    type: string
+    description: Response message based on the response code.
+  posTransactionId:
+    type: string
+    description: Echo of posTransctionId field from request.
+    example: 6195567
+  enrollDate:
+    type: string
+    description: Enrollment date, e.g. "2013-08-01".
+    example: 2013-08-01
+  printedCardNumber:
+    type: string
+    description: Printed card number, e.g. "1010101090000317".
+    example: 1010101090000317
+  maskedCardNumber :
+    type: string
+    description: masked card number, e.g. "000317".
+    example: 000317
+  isRegistered:
+    type: boolean
+    description: Indicate whether the guest is registered.
+    example: true
+  tierName:
+    type: string
+    description: Name of tier, e.g. "Unregistered".
+    example: Unregistered
+  tierCode:
+    type: string
+    description: Code to identify the tier, e.g. 0.
+    example: 0  
+  cardTemplateCode:
+    type: integer
+    description: Code to uniquely identify the card template.
+    example: 123
+  cardTemplateName:
+    type: string
+    description: Name of the card template, e.g. "Loyalty Card".
+    example: Loyalty Card
+  customerName:
+    type: string
+    description: Name of customer. This could be an empty string if the information is not available.
+    example: Joe Smith
+  pxAuthCode:
+    type: string
+    description: 6-digit random value, e.g. "683290".
+    example: 683290
+  pxTransactionId:
+    type: long
+    description: Unique 64-bit signed integer value to identify this transaction, this can be used to reverse a previous transaction.
+    example: 148240240
+  svCurrentBalance:
+    type: decimal
+    description: Balance of Stored Value wallet.
+    example: 25.00 
+  svTransactionAmount:
+    type: decimal
+    description: Transaction amount of Stored Value wallet.
+    example: 25.00
+  svPreviousBalance:
+    type: decimal
+    description: Previous balance of Stored Value wallet.
+    example: 5.00 
+  svriFlag:
+    type: boolean
+    description: Indicates whether Stored Value balance information is present in reply
+    example: true
+  expirationDate:
+    type: string
+    description: If the card is a gift card, this field displays the card’s expiration date in the form YYYY-MM-DD.
+    example: '2024-10-05'
+  activationItem:
+    type: object
+    description: What POS item to insert into the check for this activation. Only present for activations.
+    $ref: '.\activationItem.yaml'
+  balancePoints:
+    type: array
+    description: Point balances that cannot be directly redeemed.
+    items:
+      $ref: '.\balancePoint.yaml'
+  rewardPoints:
+    type: array
+    description: Point balances that can be redeemed.
+    items:
+      $ref: '.\balancePoint.yaml'
+  anonymousAccountToken:
+    type: string
+    description: Unique String value to identify the guest.
+    example: 683290
+
+required:
+  - result
+  - errorCode
+  - errorMessage
+  - responseCode
+  - responseMessage
+  - enrollDate
+  - printedCardNumber
+  - maskedCardNumber
+  - cardTemplateCode
+  - cardTemplateName
+  - pxTransactionId  
