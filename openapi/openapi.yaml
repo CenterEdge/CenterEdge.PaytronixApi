@@ -25,6 +25,6 @@ paths:
     $ref: 'paths/transaction/reverse.yaml' 
 components:
   securitySchemes:
-    bearer_auth:
+    basic_auth:
       type: http
-      scheme: bearer
+      scheme: basic
