@@ -7,7 +7,7 @@ post:
     as well as the recording of billing events for our order and delivery integrations.
   operationId: checkPost
   security:
-    - bearer_auth: []
+    - basic_auth: []
   requestBody:
     content:
       application/json:

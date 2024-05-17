@@ -16,7 +16,7 @@ get:
           $ref: '../../components/schemas/reverse.yaml'
     required: true
   security:
-    - bearer_auth: []
+    - basic_auth: []
   responses:
     '200':
       description: Ok

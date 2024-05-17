@@ -9,7 +9,7 @@ post:
     and not needing the autoActivateCard argument. If successfull, it will return a receipt.
   operationId: checkPostAndAccrue
   security:
-    - bearer_auth: []
+    - basic_auth: []
   requestBody:
     content:
       application/json:

@@ -11,7 +11,7 @@ post:
     a list of attempted rewards that cannot be applied (including any previously applied rewards that are no longer applicable) and a new receipt text.
   operationId: checkSimulateAccrual
   security:
-    - bearer_auth: []
+    - basic_auth: []
   requestBody:
     content:
       application/json:
