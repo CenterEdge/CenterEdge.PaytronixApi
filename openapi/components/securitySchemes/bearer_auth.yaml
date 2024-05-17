@@ -1,2 +1,2 @@
 type: http
-scheme: bearer
+scheme: basic
