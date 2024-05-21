@@ -5,7 +5,7 @@ properties:
     description:  Identifies this detail as a gift card detail. Must always be "giftCard".
     example: giftCard
   pxTransactionId:
-    type: long
+    type: integer
     description: Paytronix transaction ID, if available and for a Paytronix gift card.
     example: 1234567890
   masked:

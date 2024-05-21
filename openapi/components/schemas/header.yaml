@@ -41,8 +41,10 @@ properties:
     description: Cashier (operator) ID.
     example: 43
   properties:
-    type: map[string]
+    type: array
     description: Can be empty. Additional POS-specific properties as strings. Defaults to empty.
+    items:
+      type: string
   isVoid:
     type: boolean
     description: Flag to indicate whether the check is voided.
