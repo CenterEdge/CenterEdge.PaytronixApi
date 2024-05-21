@@ -40,10 +40,7 @@ properties:
       - SV
       - CH
       - PX
-  properties:
-    type: object
-    additionalProperties:
-      type: string
+      
 required:
   - merchantId
   - storeCode
@@ -52,4 +49,3 @@ required:
   - posTransactionId
   - senderId
   - programId
-  - properties
