@@ -1,9 +1,7 @@
 type: object
+allOf:
+  - $ref: './checkItemBase.yaml'
 properties:
-  type:
-    type: string
-    description: Identifies this item as a tender item. Must always be "tenderItem"
-    example: tenderItem
   itemId:
     type: string
     description: Identifier for the tender item. This identifies the tender item in the Paytronix database, not the particular line item in the check.
@@ -38,7 +36,7 @@ properties:
         creditCard: './creditCardTenderItem.yaml'
         giftCard: './giftCardTenderItem.yaml'
         loyaltyCard: './loyaltyCardTenderItem.yaml'
+
 required:
-  - type
   - itemId
   - amount

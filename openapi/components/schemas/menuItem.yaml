@@ -1,9 +1,7 @@
 type: object
+allOf:
+  - $ref: './checkItemBase.yaml'
 properties:
-  type:
-    type: string
-    description: Identifies this item as a menu item. Must always be "menuItem"
-    example: menuItem
   itemId:
     type: string
     description: Identifier for the menu item. This identifies the menu item in the Paytronix database, not the particular line item in the check.
@@ -73,6 +71,5 @@ properties:
     example: 0
     
 required:
-  - type
   - itemId
   - price
