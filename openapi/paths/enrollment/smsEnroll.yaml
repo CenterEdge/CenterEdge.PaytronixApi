@@ -1,4 +1,4 @@
-get:
+post:
   tags:
     - SMS Enrollment
   summary: Enroll in SMS

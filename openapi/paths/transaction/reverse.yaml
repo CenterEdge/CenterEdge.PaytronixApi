@@ -1,4 +1,4 @@
-get:
+post:
   tags:
     - Reverse transaction
   summary: Reverses a transaction
