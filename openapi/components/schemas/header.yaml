@@ -13,11 +13,11 @@ properties:
     description: True if the check is a return check, i.e., a check containing one or more returned items. A check being marked this way does not affect the interpretation of the line items, it’s merely used as an additional data point for various analysis such as fraud analysis.
     example: True   
   openTime:
-    type: object
+    type: string
     description: Date and time the check was opened, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
     example: 2024-05-06 11:12:23 +5
   closeTime:
-    type: object
+    type: string
     description: Date and time the check was closed, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
     example: 2024-05-06 11:22:23 +5
   seatCount:
