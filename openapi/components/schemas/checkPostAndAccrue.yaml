@@ -13,10 +13,10 @@ properties:
     description: The agent name. Used if a store has more than one POS system.
     example: PDQ POS   
   check:
-    type: object
+    $ref: './check.yaml'
     description: POS check to post.
   cardInfo:
-    type: object
+    $ref: './cardInfo.yaml'
     description: Card to accrue points for.
   autoActivateCard:
     type: boolean
@@ -34,6 +34,9 @@ properties:
   receiptSettings:
     type: array
     description: List of receipt settings
+    minimum: 1
+    items:
+      $ref: './receiptSettings.yaml'
     
 required:
   - merchantId

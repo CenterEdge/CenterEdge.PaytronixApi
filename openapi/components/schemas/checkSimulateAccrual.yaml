@@ -13,12 +13,11 @@ properties:
     description: The agent name. Used if a store has more than one POS system.
     example: PDQ POS
   check:
-    type: object
+    $ref: './check.yaml'
     description: POS check to post.
   cardInfo:
-    type: object
-    description: Card to accrue points for.
     $ref: './cardInfo.yaml'
+    description: Card to accrue points for.
   autoActivateCard:
     type: boolean
     description: True if the card should automatically be activated if it is not already active. Defaults to false
@@ -32,10 +31,9 @@ properties:
     type: string
     description: The POS operator (cashier) who submitted the check for accrual, usually by closing the check. Use "0" if the operator is unknown or unavailable.
     example: 0
-  rewardSelectionMode:
-    type: object
-    description: Identifies whether to use automatic, manual, or applicable_rewards reward selection.    
+  rewardSelectionMode:  
     $ref: './rewardSelectionMode.yaml'
+    description: Identifies whether to use automatic, manual, or applicable_rewards reward selection.  
   potentialUnitItems:
     type: array
     description:  A sequence of items which are dispensed by weight or volume and which are available to the guest. This is separate from items which have already been inserted into the check.

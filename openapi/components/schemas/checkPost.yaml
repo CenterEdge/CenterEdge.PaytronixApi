@@ -9,7 +9,7 @@ properties:
     description: A short code to uniquely identify the store where this transaction occurred.
     example: corp
   check:
-    type: object
+    $ref: './check.yaml'
     description: POS check to post.
     
 required:
