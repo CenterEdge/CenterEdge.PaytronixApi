@@ -30,13 +30,13 @@ properties:
     description: Not present if a cash tender or not one of the available types (credit card, gift card, or loyalty card). Gives additional detail about the tender. Available types are Credit card, Gift card, Loyalty card.
     oneOf:
       - $ref: './creditCardTenderItem.yaml'
-      - $ref: './giftCard.yaml'
+      - $ref: './giftCardTenderItem.yaml'
       - $ref: './loyaltyCardTenderItem.yaml'
     discriminator:
       propertyName: type
       mapping:
         creditCard: './creditCardTenderItem.yaml'
-        giftCard: './giftCard.yaml'
+        giftCard: './giftCardTenderItem.yaml'
         loyaltyCard: './loyaltyCardTenderItem.yaml'
 required:
   - type

@@ -1,7 +1,6 @@
 type: object
 properties:
   header:
-    description: The header to the check. Contains details about the check as as whole, such as check number, number of seats, time opened, etc.
     $ref: './header.yaml' 
   items:
     type: array
@@ -9,7 +8,6 @@ properties:
     items: 
       $ref: './checkItem.yaml'
   totals:
-    description: The totals at the end of the check.
     $ref: './totals.yaml'
     
 required:

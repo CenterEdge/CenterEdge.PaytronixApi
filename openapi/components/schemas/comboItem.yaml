@@ -31,7 +31,7 @@ properties:
     description: Can be empty. Any categories the combo item is associated with. Defaults to empty.
     default: []    
     items:
-      $ref: '.\category.yaml'
+      $ref: './category.yaml'
   isVoided:
     type: boolean
     description: True if the combo item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
@@ -57,18 +57,18 @@ properties:
     description: Can be empty. A list of any modifiers (such as condiments) attached to the combo item. Defaults to empty.
     default: []    
     items:
-      $ref: '.\modifier.yaml'
+      $ref: './modifier.yaml'
   discounts:
     type: array
     description: Can be empty. A list of any discounts that apply to the single combo item only, applicable for instance if a coupon has been applied. Defaults to empty.
     default: []    
     items:
-      $ref: '.\discountItem.yaml'
+      $ref: './discountItem.yaml'
   items:
     type: array
     description: List of menu items to be included in the combo.  
     items:
-      $ref: '.\menuItem.yaml'
+      $ref: './menuItem.yaml'
   consumedQuantity:
     type: number
     format: decimal

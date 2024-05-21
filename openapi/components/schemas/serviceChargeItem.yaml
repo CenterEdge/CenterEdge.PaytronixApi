@@ -51,7 +51,7 @@ properties:
     description: Can be empty. A list of any discounts that apply to the single service charge item only, applicable for instance if a coupon has been applied. Defaults to empty.
     default: []    
     items:
-      $ref: '.\discountItem.yaml'
+      $ref: './discountItem.yaml'
   consumedQuantity:
     type: number
     format: decimal

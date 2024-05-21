@@ -53,11 +53,10 @@ properties:
     example: True
   orderMethod:
     type: string
-    description: Order method of the check. Possible values are: 
-      in store, online web, online app, online app - android, online app - ios, call in, call center, drive through, kiosk, third party ordering, smart home device ordering, other
+    description: Order method of the check. Possible values are in store, online web, online app, online app - android, online app - ios, call in, call center, drive through, kiosk, third party ordering, smart home device ordering, other
   deliveryMethod:
     type: string
-    description: Delivery method of the check. Possible values are: dine in, pick up, in house delivery, curbside, drive through, third party delivery, other
+    description: Delivery method of the check. Possible values are dine in, pick up, in house delivery, curbside, drive through, third party delivery, other
 
 required:
   - number 

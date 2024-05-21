@@ -32,7 +32,7 @@ properties:
     default: []
     example: [{"categoryType": "major", "id": "-1"}]
     items:
-      $ref: '.\category.yaml'
+      $ref: './category.yaml'
   isVoided:
     type: boolean
     description: True if the menu item is voided or removed from the check and does not affect the check total, nor was purchased or returned. Defaults to false.
@@ -58,13 +58,13 @@ properties:
     description: Can be empty. A list of any modifiers (such as condiments) attached to the menu item. Defaults to empty.
     default: []    
     items:
-      $ref: '.\modifier.yaml'
+      $ref: './modifier.yaml'
   discounts:
     type: array
     description: Can be empty. A list of any discounts that apply to the single menu item only, applicable for instance if a coupon has been applied. Defaults to empty.
     default: []    
     items:
-      $ref: '.\discountItem.yaml'
+      $ref: './discountItem.yaml'
   consumedQuantity:
     type: number
     format: decimal

@@ -5,7 +5,7 @@ properties:
     description:  Identifies this detail as a loyalty card detail. Must always be "loyaltyCard".
     example: loyaltyCard
   pxTransactionId:
-    type: long
+    type: integer
     description: Paytronix transaction ID, if available and for a Paytronix comp/loyalty card.
     example: 1234567890
   masked:
