@@ -14,13 +14,14 @@ properties:
   uniqueIdentifier:
     type: string
     description: |
-      Unique check identification number. Paytronix requires that this is unique within the business day at the particular store. 
+      Unique check identification number. Paytronix requires that this is unique within the business day at the particular store.
       This field should be entered if and only if ‘number’ field isn’t guaranteed to be unique within the business day at the particular store.
     example: '#f62bed51-efea-c1fb-9336-a4e4cf934100'
   pxTransactionId:
-    type: string
+    type: number
+    format: int64
     description: Paytronix transaction ID.
-    example: 11269326  
+    example: 11269326
   itemDiscounts:
     type: array
     description: The list of per-item discounts that could be applied to the check.
@@ -28,7 +29,7 @@ properties:
       $ref: './itemDiscount.yaml'
   multiItemDiscounts:
     type: array
-    description: The list of multi-item discounts that could be applied to the check..    
+    description: The list of multi-item discounts that could be applied to the check..
     items:
       $ref: './multiItemDiscount.yaml'
   subtotalDiscounts:
@@ -86,12 +87,12 @@ properties:
       $ref: './pointInfo.yaml'
   rewardBalances:
     type: array
-    description: The list of the remaining quantity of all rewards on the given card.   
+    description: The list of the remaining quantity of all rewards on the given card.
     items:
       $ref: './rewardPointInfo.yaml'
   changedWalletContents:
     type: array
-    description: The list of visible points changes..    
+    description: The list of visible points changes..
     items:
       $ref: './pointInfo.yaml'
   posMessages:
