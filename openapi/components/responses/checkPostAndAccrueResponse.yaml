@@ -9,4 +9,4 @@ discriminator:
   mapping:
     success: '../schemas/checkPostAndAccrueSuccess.yaml'
     noWorkSuccess: '../schemas/noWorkSuccess.yaml'
-    failed: '../schemas/error.yaml'
+    failure: '../schemas/error.yaml'
