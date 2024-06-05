@@ -1,9 +1,0 @@
-description: |
-  Response from posting a check
-oneOf:
-  - $ref: '../schemas/checkPostResponseInfo.yaml'
-discriminator:
-  propertyName: result
-  mapping:
-    success: '../schemas/checkPostResponseInfo.yaml'
-    failure: '../schemas/checkPostResponseInfo.yaml'      
