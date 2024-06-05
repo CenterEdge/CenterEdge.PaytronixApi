@@ -18,7 +18,7 @@ properties:
   printedCardNumber:
     type: string
     description: The printed card number associated with the account.
-    example: 011235813213455  
+    example: 011235813213455
   pointBalances:
     type: array
     description: The guest’s loyalty point balances.
@@ -26,7 +26,7 @@ properties:
       $ref: './pointInfo.yaml'
   rewardBalances:
     type: array
-    description: The list of the remaining quantity of all rewards on the given card.    
+    description: The list of the remaining quantity of all rewards on the given card.
     items:
       $ref: './rewardPointInfo.yaml'
   changedWalletContents:
@@ -37,6 +37,8 @@ properties:
   posMessages:
     type: array
     description: A list of messages to be displayed to the cashier
+    items:
+      type: string
   guestWebSite:
     type: string
     description: A URL where guests can login to see their balances and transaction history
