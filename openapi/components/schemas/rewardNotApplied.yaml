@@ -22,7 +22,7 @@ properties:
     description: Reason code used to determine which message to send.
     example: minimumSpendNotMet
   walletCode:
-    type: string
+    type: integer
     description: A numeric identifier for the specified discount that could not be applied, unique for a given merchant.
     example: 3
   walletName:
