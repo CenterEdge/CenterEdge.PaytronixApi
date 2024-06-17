@@ -66,10 +66,7 @@ jobs:
         args: |
           yardarm generate -i ./dist/centeredge-paytronixapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdge.PaytronixApi -v ${{ steps.gitversion.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
 
-    - name: Setup - CenterEdge Nuget
-      uses: centeredge/ci-actions/dotnet/setup/nuget-feed@v1
-      with:
-        gh-packages-token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Push - Yardarm SDK
-      run: dotnet nuget push **/*.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
+      run: >-
+        dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github https://nuget.pkg.github.com/CenterEdge/index.json
+        dotnet nuget push **/*.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
