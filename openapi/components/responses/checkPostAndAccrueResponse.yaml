@@ -1,12 +1,12 @@
 description: |
   Response information from a check post and accrue points call.
 oneOf:
-- $ref: '../schemas/checkPostAndAccrueWithRedeemSuccess.yaml'
-- $ref: '../schemas/noWorkSuccess.yaml'
-- $ref: '../schemas/error.yaml'
+  - $ref: '../schemas/checkPostAndAccrueSuccess.yaml'
+  - $ref: '../schemas/noWorkSuccess.yaml'
+  - $ref: '../schemas/error.yaml'
 discriminator:
   propertyName: result
   mapping:
-    success: '../schemas/checkPostAndAccrueWithRedeemSuccess.yaml'
+    success: '../schemas/checkPostAndAccrueSuccess.yaml'
     noWorkSuccess: '../schemas/noWorkSuccess.yaml'
     failure: '../schemas/error.yaml'

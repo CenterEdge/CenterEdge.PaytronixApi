@@ -1,15 +1,15 @@
 post:
   tags:
-  - PostAndAccruePoints
-  summary: Post a check and accrue points with redeem
+    - PostAndAccruePoints
+  summary: Post a check and accrue points
   description: |
-    The check post and accrue points with redeem request is meant to follow a call to POST check/simulateAccrualAndRedemption.json,
-    enabling you to choose the discounts that are applied. These will be passed in through the Check object.
-    Its arguments are almost identical to the POST check/postAndAccruePointsWithAutoRedeem.json endpoint, merely requiring the addition of a receiptSettings object,
+    The check post and accrue points with redeem request is meant to follow a call to POST check/simulateAccrualAndRedemption.json, 
+    enabling you to choose the discounts that are applied. These will be passed in through the Check object. 
+    Its arguments are almost identical to the POST check/postAndAccruePointsWithAutoRedeem.json endpoint, merely requiring the addition of a receiptSettings object, 
     and not needing the autoActivateCard argument. If successfull, it will return a receipt.
-  operationId: checkPostAndAccrueWithRedeem
+  operationId: checkPostAndAccrue
   security:
-  - basic_auth: []
+    - basic_auth: []
   requestBody:
     content:
       application/json:
@@ -23,6 +23,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/responses/checkPostAndAccrueWithRedeemResponse.yaml'
+            $ref: '../../components/responses/checkPostAndAccrueResponse.yaml'
     '401':
       $ref: '../../components/responses/unauthorized.yaml'
