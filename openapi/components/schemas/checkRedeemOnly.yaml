@@ -1,0 +1,40 @@
+type: object
+properties:
+  merchantId:
+    type: integer
+    description: Paytronix-assigned merchant ID to perform the operation in.
+    example: 1107
+  storeCode:
+    type: string
+    description: A short code to uniquely identify the store where this transaction occurred.
+    example: corp
+  agentName:
+    type: string
+    description: The agent name. Used if a store has more than one POS system.
+    example: PDQ POS
+  check:
+    $ref: './check.yaml'
+    description: POS check to post.
+  cardInfo:
+    $ref: './cardInfo.yaml'
+    description: Card to accrue points for.
+  terminal:
+    type: string
+    description: Number of the POS terminal where the check was submitted for accrual, usually by closing the check. Use "0" if the terminal is unknown or unavailable. Maximum of 100 characters.
+    example: 1
+  operator:
+    type: string
+    description: The POS operator (cashier) who submitted the check for accrual, usually by closing the check. Use "0" if the operator is unknown or unavailable.
+    example: 0
+  rewardSelectionMode:
+    $ref: './rewardSelectionMode.yaml'
+    description: Identifies whether to use automatic, manual, or applicable_rewards reward selection.
+
+required:
+- merchantId
+- storeCode
+- check
+- cardInfo
+- terminal
+- operator
+- rewardSelectionMode

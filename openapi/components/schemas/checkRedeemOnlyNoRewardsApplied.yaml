@@ -1,0 +1,33 @@
+type: object
+properties:
+  result:
+    type: string
+    example: noRewardsApplied
+  printedCardNumber:
+    type: string
+    description: Printed card number, e.g. "1010101090000317".
+    example: 1010101090000317
+  pointBalances:
+    type: array
+    description: The list of the remaining quantity of all points on the given card.
+    items:
+      $ref: './pointInfo.yaml'
+  rewardBalances:
+    type: array
+    description: The list of the remaining quantity of all rewards on the given card.
+    items:
+      $ref: './rewardPointInfo.yaml'
+  receiptText:
+    type: object
+    description: This is a mapping from String labels to sets (or lists) of receipt lines
+    additionalProperties:
+      type: array
+      items:
+        type: string
+
+required:
+- result
+- printedCardNumber
+- pointBalances
+- rewardBalances
+- receiptText

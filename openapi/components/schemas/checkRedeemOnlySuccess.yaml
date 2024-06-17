@@ -1,0 +1,115 @@
+type: object
+properties:
+  result:
+    type: string
+    example: success
+  checkNumber:
+    type: string
+    description: The check number.
+    example: 5657
+  uniqueIdentifier:
+    type: string
+    description: |
+      Unique check identification number. Paytronix requires that this is unique within the business day at the particular store.
+      This field should be entered if and only if ‘number’ field isn’t guaranteed to be unique within the business day at the particular store.
+    example: '#f62bed51-efea-c1fb-9336-a4e4cf934100'
+  openTime:
+    type: string
+    description: Date and time the check was opened, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
+    example: 0001-01-01 00:00:00 -00:00
+  pxTransactionId:
+    type: number
+    format: int64
+    description: Paytronix transaction ID.
+    example: 11269326
+  itemDiscounts:
+    type: array
+    description: The list of per-item discounts that could be applied to the check.
+    items:
+      $ref: './itemDiscount.yaml'
+  multiItemDiscounts:
+    type: array
+    description: The list of multi-item discounts that could be applied to the check..
+    items:
+      $ref: './multiItemDiscount.yaml'
+  subtotalDiscounts:
+    type: array
+    description: The list of applicable discounts which concern the check subtotal, or the whole check.
+    items:
+      $ref: './subtotalDiscount.yaml'
+  serviceChargeDiscounts:
+    type: array
+    description: The list of serviceCharge discounts that could be applied to the check.
+    items:
+      $ref: './serviceChargeDiscount.yaml'
+  chosenRewardsNotApplied:
+    type: array
+    description: The list of chosen rewards that were unable to be applied to the check.
+    items:
+      $ref: './chosenReward.yaml'
+  pointBalances:
+    type: array
+    description: The list of the remaining quantity of all points on the given card.
+    items:
+      $ref: './pointInfo.yaml'
+  rewardBalances:
+    type: array
+    description: The list of the remaining quantity of all rewards on the given card.
+    items:
+      $ref: './rewardPointInfo.yaml'
+  receiptText:
+    type: object
+    description: This is a mapping from String labels to sets (or lists) of receipt lines
+    additionalProperties:
+      type: array
+      items:
+        type: string
+  changedWalletContents:
+    type: array
+    description: The list of visible points changes.
+    items:
+      $ref: './pointInfo.yaml'
+  posMessages:
+    type: array
+    description: A list of messages to be displayed to the cashier
+    items:
+      type: string
+  guestWebSite:
+    type: string
+    description: A URL where guests can login to see their balances and transaction history
+  customerName:
+    type: string
+    description: Name of customer. This could be an empty string if the information is not available.
+    example: Joe Smith
+  tierName:
+    type: string
+    description: Name of tier, e.g. "Unregistered".
+    example: Unregistered
+  printedCardNumber:
+    type: string
+    description: Printed card number, e.g. "1010101090000317".
+    example: 1010101090000317
+  anonymousAccountToken:
+    type: string
+    description: Unique String value to identify the guest.
+    example: 683290
+
+required:
+- result
+- checkNumber
+- openTime
+- pxTransactionId
+- itemDiscounts
+- multiItemDiscounts
+- subtotalDiscounts
+- serviceChargeDiscounts
+- chosenRewardsNotApplied
+- pointBalances
+- rewardBalances
+- receiptText
+- changedWalletContents
+- posMessages
+- guestWebSite
+- customerName
+- tierName
+- printedCardNumber
