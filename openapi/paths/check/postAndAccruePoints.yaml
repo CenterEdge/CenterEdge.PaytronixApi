@@ -1,0 +1,28 @@
+post:
+  tags:
+  - PostAndAccruePoints
+  summary: Post a check and accrue points
+  description: |
+    The check post and accrue points request allows for a simplified one-step flow for posting a check for analysis and accruing points with one action,
+     equivalent to using POST check/computePointAccrual.json to compute a point accrual Add/Redeem Request then submitting it via POST transaction/addRedeem.json
+     and then submitting the check again via POST check/post.json.
+     The only reason to use the multi-step flow is if the point accrual add/redeem needs to be tailored for special applications prior to submission.
+  operationId: checkPostAndAccrue
+  security:
+  - basic_auth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/checkPostAndAccrue.yaml'
+    description: The check to post
+    required: true
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/checkPostAndAccrueResponse.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'

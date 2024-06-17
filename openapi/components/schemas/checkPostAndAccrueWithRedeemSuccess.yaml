@@ -3,10 +3,20 @@ properties:
   result:
     type: string
     example: success
-  reply:
-    type: object
-    description: The add/redeem reply from the point accrual transaction.
-    $ref: './addRedeemReply.yaml'
+  checkNumber:
+    type: string
+    description: The check number.
+    example: 5657
+  uniqueIdentifier:
+    type: string
+    description: |
+      Unique check identification number. Paytronix requires that this is unique within the business day at the particular store.
+      This field should be entered if and only if ‘number’ field isn’t guaranteed to be unique within the business day at the particular store.
+    example: '#f62bed51-efea-c1fb-9336-a4e4cf934100'
+  openTime:
+    type: string
+    description: Date and time the check was opened, in UTC by default unless timezone offset specified. The format is yyyy-MM-dd HH:mm:ss [+-ZZZZ]
+    example: 0001-01-01 00:00:00 -00:00
   customerName:
     type: string
     description: The customer’s name.
@@ -19,6 +29,14 @@ properties:
     type: string
     description: The printed card number associated with the account.
     example: 011235813213455
+  accountCode:
+    type: integer
+    description: Unique identifier for the account associated with the accrual.
+    example: 123456
+  pxTransactionId:
+    type: integer
+    description: Unique 64-bit signed integer value to identify this transaction, this can be used to reverse a previous transaction.
+    example: 148240240
   pointBalances:
     type: array
     description: The guest’s loyalty point balances.
@@ -52,10 +70,13 @@ properties:
 
 required:
 - result
-- reply
+- checkNumber
+- openTime
 - customerName
 - tierName
 - printedCardNumber
+- accountCode
+- pxTransactionId
 - pointBalances
 - rewardBalances
 - changedWalletContents

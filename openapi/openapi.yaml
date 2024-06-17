@@ -17,6 +17,8 @@ paths:
     $ref: 'paths/check/post.yaml'
   '/check/redeemOnly':
     $ref: 'paths/check/redeemOnly.yaml'
+  '/check/postAndAccruePoints':
+    $ref: 'paths/check/postAndAccruePoints.yaml'
   '/check/postAndAccruePointsWithRedeem':
     $ref: 'paths/check/postAndAccruePointsWithRedeem.yaml'
   '/check/simulateAccrualAndRedemption':

@@ -11,7 +11,7 @@ properties:
   agentName:
     type: string
     description: The agent name. Used if a store has more than one POS system.
-    example: PDQ POS   
+    example: PDQ POS
   check:
     $ref: './check.yaml'
     description: POS check to post.
@@ -26,7 +26,7 @@ properties:
   terminal:
     type: string
     description: Number of the POS terminal where the check was submitted for accrual, usually by closing the check. Use "0" if the terminal is unknown or unavailable. Maximum of 100 characters.
-    example: 1   
+    example: 1
   operator:
     type: string
     description: The POS operator (cashier) who submitted the check for accrual, usually by closing the check. Use "0" if the operator is unknown or unavailable.
@@ -37,13 +37,13 @@ properties:
     minimum: 1
     items:
       $ref: './receiptSettings.yaml'
-    
+
 required:
-  - merchantId
-  - storeCode
-  - check
-  - cardInfo
-  - autoActivateCard
-  - terminal
-  - operator
-  - receiptSettings
+- merchantId
+- storeCode
+- check
+- cardInfo
+- autoActivateCard
+- terminal
+- operator
+- receiptSettings
