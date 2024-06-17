@@ -59,7 +59,7 @@ jobs:
           dist
 
     - name: Build - Yardarm SDK
-      uses: CenterEdge/yardarm-action@v1
+      uses: centeredge/yardarm-action@v1
       with:
         yardarm: 0.5.0-beta0002
         pre-release: true
