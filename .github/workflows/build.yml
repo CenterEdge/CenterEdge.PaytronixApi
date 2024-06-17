@@ -70,4 +70,4 @@ jobs:
     - name: Push - Yardarm SDK
       run: >-
         dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github https://nuget.pkg.github.com/CenterEdge/index.json
-        dotnet nuget push **/*.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
+        && dotnet nuget push **/*.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
