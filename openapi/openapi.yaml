@@ -11,10 +11,14 @@ info:
     url: 'https://raw.githubusercontent.com/CenterEdge/centeredge-resources/master/logo/2022/CenterEdge_Logo_Cmyk.svg'
   description: CenterEdge Software Integration with Paytronix API
 servers:
-  - url: 'http://example.com/api/v1'
+- url: 'http://example.com/api/v1'
 paths:
   '/check/post':
     $ref: 'paths/check/post.yaml'
+  '/check/redeemOnly':
+    $ref: 'paths/check/redeemOnly.yaml'
+  '/check/postAndAccruePoints':
+    $ref: 'paths/check/postAndAccruePoints.yaml'
   '/check/postAndAccruePointsWithRedeem':
     $ref: 'paths/check/postAndAccruePointsWithRedeem.yaml'
   '/check/simulateAccrualAndRedemption':
@@ -22,7 +26,7 @@ paths:
   '/enrollment/smsEnroll':
     $ref: 'paths/enrollment/smsEnroll.yaml'
   '/transaction/reverse':
-    $ref: 'paths/transaction/reverse.yaml' 
+    $ref: 'paths/transaction/reverse.yaml'
 components:
   securitySchemes:
     basic_auth:

@@ -1,0 +1,25 @@
+post:
+  tags:
+  - Checks
+  summary: Redeem a check
+  description: |
+    The redeem only request can run an add-redeem to redeem rewards against a given check, returning a list of discounts to insert.
+  operationId: checkRedeemOnly
+  security:
+  - basic_auth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/checkRedeemOnly.yaml'
+    description: The check to redeem
+    required: true
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/checkRedeemOnlyResponse.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'

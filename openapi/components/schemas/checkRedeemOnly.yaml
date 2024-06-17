@@ -18,11 +18,6 @@ properties:
   cardInfo:
     $ref: './cardInfo.yaml'
     description: Card to accrue points for.
-  autoActivateCard:
-    type: boolean
-    description: True if the card should automatically be activated if it is not already active. Defaults to false
-    default: false
-    example: false
   terminal:
     type: string
     description: Number of the POS terminal where the check was submitted for accrual, usually by closing the check. Use "0" if the terminal is unknown or unavailable. Maximum of 100 characters.
@@ -31,19 +26,15 @@ properties:
     type: string
     description: The POS operator (cashier) who submitted the check for accrual, usually by closing the check. Use "0" if the operator is unknown or unavailable.
     example: 0
-  receiptSettings:
-    type: array
-    description: List of receipt settings
-    minimum: 1
-    items:
-      $ref: './receiptSettings.yaml'
+  rewardSelectionMode:
+    $ref: './rewardSelectionMode.yaml'
+    description: Identifies whether to use automatic, manual, or applicable_rewards reward selection.
 
 required:
 - merchantId
 - storeCode
 - check
 - cardInfo
-- autoActivateCard
 - terminal
 - operator
-- receiptSettings
+- rewardSelectionMode
