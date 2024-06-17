@@ -2,7 +2,7 @@ type: object
 properties:
   result:
     type: string
-    example: success
+    example: couponSuccess
   checkNumber:
     type: string
     description: The check number.
