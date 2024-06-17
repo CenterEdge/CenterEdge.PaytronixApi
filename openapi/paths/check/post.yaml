@@ -1,13 +1,13 @@
 post:
   tags:
-    - Post
+  - Checks
   summary: Post a check
   description: |
     The check post request allows for a full POS check to be submitted to the PXS diagnostic or data analysis purposes,
     as well as the recording of billing events for our order and delivery integrations.
   operationId: checkPost
   security:
-    - basic_auth: []
+  - basic_auth: []
   requestBody:
     content:
       application/json:

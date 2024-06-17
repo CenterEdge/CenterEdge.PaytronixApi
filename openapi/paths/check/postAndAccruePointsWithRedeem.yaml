@@ -1,6 +1,6 @@
 post:
   tags:
-  - PostAndAccruePoints
+  - Checks
   summary: Post a check and accrue points with redeem
   description: |
     The check post and accrue points with redeem request is meant to follow a call to POST check/simulateAccrualAndRedemption.json,

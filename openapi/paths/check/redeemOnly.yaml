@@ -1,7 +1,7 @@
 post:
   tags:
-  - Redeem
-  summary: Only redeem a check
+  - Checks
+  summary: Redeem a check
   description: |
     The redeem only request can run an add-redeem to redeem rewards against a given check, returning a list of discounts to insert.
   operationId: checkRedeemOnly
