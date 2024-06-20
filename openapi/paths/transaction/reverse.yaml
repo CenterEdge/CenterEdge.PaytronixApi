@@ -4,11 +4,11 @@ post:
   summary: Reverses a transaction
   description: |
     A reverse request is used to reverse a previous transaction. Only transactions that happened in the last seven days can be reversed.
-    The transaction to reverse can be specified in the message by one of the following combinations of request fields: 
-    * The pxTransactionId from the original transaction reply 
-    * The pxAuthCode from the original transaction reply and the card info used for the original transaction 
+    The transaction to reverse can be specified in the message by one of the following combinations of request fields:
+    * The pxTransactionId from the original transaction reply
+    * The pxAuthCode from the original transaction reply and the card info used for the original transaction
     * The posTransactionId and LP-code for the original transaction request type.
-  operationId: reverse  
+  operationId: reverse
   requestBody:
     content:
       application/json:
@@ -23,6 +23,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/responses/transactionReply.yaml'
+            $ref: '../../components/schemas/transactionReply.yaml'
     '401':
       $ref: '../../components/responses/unauthorized.yaml'
