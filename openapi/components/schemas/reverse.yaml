@@ -4,17 +4,18 @@ properties:
     type: object
     $ref: './headerInfo.yaml'
   pxTransactionId:
-    type: string
+    type: number
+    format: int64
     description: The pxTransactionId from reply to transaction to reverse.
     example: 123456789
   pxAuthCode:
     type: string
     description: The pxAuthCode from reply to transaction to reverse.
-    example: 123456789
+    example: "123456789"
   previousPosTransactionId:
     type: string
     description: The pxTransactionId from transaction to reverse.
-    example: 123456789
+    example: "123456789"
   previousSequenceNumber:
     type: string
     description: The sequenceNumber from transaction to reverse.
