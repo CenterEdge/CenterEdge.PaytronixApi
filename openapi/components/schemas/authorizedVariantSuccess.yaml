@@ -37,9 +37,10 @@ properties:
     description: Name of tier, e.g. "Unregistered".
     example: Unregistered
   tierCode:
-    type: string
+    type: number
+    format: int64
     description: Code to identify the tier, e.g. 0.
-    example: 0  
+    example: 0
   cardTemplateCode:
     type: integer
     description: Code to uniquely identify the card template.
@@ -64,7 +65,7 @@ properties:
     type: number
     format: decimal
     description: Balance of Stored Value wallet.
-    example: 25.00 
+    example: 25.00
   svTransactionAmount:
     type: number
     format: decimal
@@ -74,7 +75,7 @@ properties:
     type: number
     format: decimal
     description: Previous balance of Stored Value wallet.
-    example: 5.00 
+    example: 5.00
   svriFlag:
     type: boolean
     description: Indicates whether Stored Value balance information is present in reply
@@ -111,4 +112,4 @@ required:
   - maskedCardNumber
   - cardTemplateCode
   - cardTemplateName
-  - pxTransactionId  
+  - pxTransactionId
