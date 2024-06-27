@@ -42,6 +42,7 @@ properties:
     type: array
     items:
       $ref: './accountQueryRows.yaml'
+    description: List of rows containing data that match the order of headers.
   senderId:
     type: string
     description: Indicates the type of sender. Always POS unless instructed otherwise by Paytronix.
