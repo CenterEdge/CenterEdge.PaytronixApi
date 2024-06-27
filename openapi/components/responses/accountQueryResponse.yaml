@@ -1,10 +1,10 @@
 description: |
   Response information from a account query call
 oneOf:
-- $ref: '../schemas/accountQueryAuthorizedSuccess.yaml'
+- $ref: '../schemas/accountQuery/authorizedSuccess.yaml'
 - $ref: '../schemas/error.yaml'
 discriminator:
   propertyName: result
   mapping:
-    authorizedSuccess: '../schemas/accountQueryAuthorizedSuccess.yaml'
+    authorizedSuccess: '../schemas/accountQuery/authorizedSuccess.yaml'
     failure: '../schemas/error.yaml'
