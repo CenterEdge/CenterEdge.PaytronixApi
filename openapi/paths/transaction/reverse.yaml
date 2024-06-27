@@ -1,6 +1,6 @@
 post:
   tags:
-    - Reverse transaction
+  - Transaction
   summary: Reverses a transaction
   description: |
     A reverse request is used to reverse a previous transaction. Only transactions that happened in the last seven days can be reversed.
@@ -16,7 +16,7 @@ post:
           $ref: '../../components/schemas/reverse.yaml'
     required: true
   security:
-    - basic_auth: []
+  - basic_auth: []
   responses:
     '200':
       description: Ok

@@ -1,0 +1,22 @@
+type: object
+properties:
+  name:
+    type: string
+    description: The field to search
+    enum:
+    - cardnum
+    - username
+    - firstname
+    - lastname
+    - postalcode
+    - phonenum
+    - email
+    example: email
+  value:
+    type: string
+    description: The value to search for in the field
+    example: paytronixUserAccount@gmail.com
+
+required:
+- name
+- value

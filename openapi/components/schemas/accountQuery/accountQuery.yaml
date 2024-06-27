@@ -1,0 +1,18 @@
+type: object
+properties:
+  headerInfo:
+    type: object
+    $ref: '../headerInfo.yaml'
+  pageSize:
+    type: integer
+    description: Maximum number of accounts to return.
+    example: 50
+  accountQueries:
+    type: array
+    items:
+      $ref: './accountQueryInquiry.yaml'
+
+required:
+- headerInfo
+- pageSize
+- accountQueries
