@@ -1,9 +1,9 @@
 type: object
 properties:
-  printedCardNumber:
+  result:
     type: string
-    description: The number printed on the card
-    example: 011235813213455
+    description: Result of the call. Must be 'authorizedSuccess'.
+    example: authorizedSuccess
   datetime:
     type: string
     description: Date and time the request responded. Formatted as ISO8601 date and time yyyy-mm-ddThh:mm:ss[.sss]
@@ -53,7 +53,7 @@ properties:
     example: 3
 
 required:
-- printedCardNumber
+- result
 - datetime
 - header
 - identificationMethod
