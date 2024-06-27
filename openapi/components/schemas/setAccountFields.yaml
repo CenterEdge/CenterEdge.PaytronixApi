@@ -1,0 +1,18 @@
+type: object
+properties:
+  style:
+    type: string
+    description: |
+      Either strings or typed. Indicates whether the rest of the fields are typed or not.
+      If not, the same fields are present but they all have type String instead of their actual type.
+      Use typed unless there is a particular requirement.
+    example: strings
+  customerNumber:
+    type: array
+    items:
+      type: string
+    description:
+
+required:
+- style
+- phoneNumber

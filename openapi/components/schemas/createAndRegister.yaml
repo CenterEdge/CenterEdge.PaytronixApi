@@ -23,8 +23,19 @@ properties:
       will go through each field named and look for any existing cardholders
       in the program which have the same value as the request.
     example: ["phone", "email"]
+  setUserFields:
+    type: object
+    description:
+    $ref: './setUserFields.yaml'
+  setAccountFields:
+    type: object
+    description:
+    $ref: './setAccountFields.yaml'
+
 
 required:
 - merchantId
 - cardTemplateCode
 - enforceUniqueFields
+- setUserFields
+- setAccountFields
