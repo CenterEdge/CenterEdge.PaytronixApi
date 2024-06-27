@@ -27,3 +27,4 @@ properties:
 required:
 - merchantId
 - cardTemplateCode
+- enforceUniqueFields
