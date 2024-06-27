@@ -1,0 +1,67 @@
+type: object
+properties:
+  printedCardNumber:
+    type: string
+    description: The number printed on the card
+    example: 011235813213455
+  datetime:
+    type: string
+    description: Date and time the request responded. Formatted as ISO8601 date and time yyyy-mm-ddThh:mm:ss[.sss]
+    example: 2004-06-01T13:10:01.001
+  header:
+    type: object
+    description:
+    $ref: './header.yaml'
+  identificationMethod:
+    type: string
+    description: Indicates how the request identified itself
+    example: Account Query
+  pageRecordCount:
+    type: integer
+    description: The number of accounts that were found and returned.
+    example: 2
+  pxAuthCode:
+    type: string
+    description: 6-digit random value, e.g. "683290".
+    example: 683290
+  pxTransactionId:
+    type: integer
+    description: Unique 64-bit signed integer value to identify this transaction, seemingly ignored for account queries
+    example: 0
+  requestEvent:
+    type: string
+    description: LP-code of original request
+    example: LP218
+  responseCode:
+    type: integer
+    example: 200
+  responseMessage:
+    type: string
+    example: Query succeeded
+  rows:
+    type: array
+    items:
+      $ref: './rows.yaml'
+    description: asd
+  senderId:
+    type: string
+    description: Indicates the type of sender. Always POS unless instructed otherwise by Paytronix.
+    example: POS
+  totalRecordCount:
+    type: integer
+    description: The total number of accounts that were found, this may differ from the number of rows returned.
+    example: 3
+
+required:
+- printedCardNumber
+- datetime
+- header
+- identificationMethod
+- pageRecordCount
+- pxAuthCode
+- pxTransactionId
+- responseCode
+- responseMessage
+- rows
+- senderId
+- totalRecordCount

@@ -1,0 +1,12 @@
+description: |
+  Response information from a account query call
+oneOf:
+- $ref: './authorizedSuccess.yaml'
+- $ref: './userDataError.yaml'
+- $ref: '../transactionFailure.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    authorizedSuccess: './authorizedSuccess.yaml'
+    userDataError: './userDataError.yaml'
+    failure: '../transactionFailure.yaml'
