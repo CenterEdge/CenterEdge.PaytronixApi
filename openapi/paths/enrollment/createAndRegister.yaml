@@ -1,0 +1,25 @@
+post:
+  tags:
+  - Enrollment
+  summary: Create and Register an Account
+  description: |
+    Creates, activates, and then registers a new virtual card with the given demographic information
+  operationId: createAndRegister
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/createAndRegister.yaml'
+    description: Account to register and enroll
+    required: true
+  security:
+  - basic_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/createAndRegisterResponse.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'
