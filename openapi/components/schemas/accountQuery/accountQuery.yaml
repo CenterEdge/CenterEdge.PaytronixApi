@@ -10,7 +10,7 @@ properties:
   accountQueries:
     type: array
     items:
-      $ref: './accountQuery`.yaml'
+      $ref: './accountQueryParam`.yaml'
 
 required:
 - headerInfo
