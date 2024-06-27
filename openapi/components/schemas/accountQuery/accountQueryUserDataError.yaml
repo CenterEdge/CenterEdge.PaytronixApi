@@ -15,7 +15,7 @@ properties:
   header:
     type: object
     description:
-    $ref: './header.yaml'
+    $ref: './accountQueryHeader.yaml'
   identificationMethod:
     type: string
     description: Indicates how the request identified itself
@@ -42,7 +42,7 @@ properties:
   rows:
     type: array
     items:
-      $ref: './rows.yaml'
+      $ref: './accountQueryRows.yaml'
     description: asd
   senderId:
     type: string
