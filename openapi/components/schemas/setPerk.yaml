@@ -1,0 +1,8 @@
+type: object
+properties:
+  code:
+    type: integer
+    description: Paytronix-assigned perk code to set
+    example: 36
+required:
+- code
