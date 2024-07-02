@@ -16,6 +16,14 @@ properties:
     type: array
     items:
       type: string
+      enum:
+      - externalAccountIdentifier
+      - customerNumber
+      - email
+      - name
+      - phone
+      - fax
+      - mobilePhone
     description: |
       List of field names that the enrollment service should check the uniqueness of against
       the existing cardholders in the program before committing any changes.

@@ -25,6 +25,8 @@ paths:
     $ref: 'paths/check/simulateAccrualAndRedemption.yaml'
   '/enrollment/smsEnroll':
     $ref: 'paths/enrollment/smsEnroll.yaml'
+  '/enrollment/createAndRegister':
+    $ref: 'paths/enrollment/createAndRegister.yaml'
   '/transaction/reverse':
     $ref: 'paths/transaction/reverse.yaml'
   '/transaction/accountQuery':
