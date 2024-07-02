@@ -1,0 +1,67 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Result of the call. Must be 'userDataError'.
+    example: userDataError
+  errorCode:
+    type: string
+  errorMessage:
+    type: string
+  datetime:
+    type: string
+    description: Date and time the request responded. Formatted as ISO8601 date and time yyyy-mm-ddThh:mm:ss[.sss]
+    example: 2004-06-01T13:10:01.001
+  header:
+    type: object
+    description:
+    $ref: './accountQueryHeader.yaml'
+  identificationMethod:
+    type: string
+    description: Indicates how the request identified itself
+    example: Account Query
+  pageRecordCount:
+    type: integer
+    description: The number of accounts that were found and returned.
+    example: 2
+  pxTransactionId:
+    type: integer
+    description: Unique 64-bit signed integer value to identify this transaction, this can be used to reverse a previous transaction.
+    example: 148240240
+  requestEvent:
+    type: string
+    description: LP-code of original request
+    example: LP218
+  responseCode:
+    type: integer
+    description: A value between 400 and 499(inclusive).
+    example: 400
+  responseMessage:
+    type: string
+    description: Response message based on the response code.
+  rows:
+    type: array
+    items:
+      $ref: './accountQueryRows.yaml'
+    description: List of rows containing data that match the order of headers.
+  senderId:
+    type: string
+    description: Indicates the type of sender. Always POS unless instructed otherwise by Paytronix.
+    example: POS
+  totalRecordCount:
+    type: integer
+    description: The total number of accounts that were found, this may differ from the number of rows returned.
+    example: 3
+
+required:
+- result
+- errorCode
+- errorMessage
+- responseCode
+- responseMessage
+- enrollDate
+- printedCardNumber
+- maskedCardNumber
+- cardTemplateCode
+- cardTemplateName
+- pxTransactionId

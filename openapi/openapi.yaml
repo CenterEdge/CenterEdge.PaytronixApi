@@ -27,6 +27,8 @@ paths:
     $ref: 'paths/enrollment/smsEnroll.yaml'
   '/transaction/reverse':
     $ref: 'paths/transaction/reverse.yaml'
+  '/transaction/accountQuery':
+    $ref: 'paths/transaction/accountQuery.yaml'
 components:
   securitySchemes:
     basic_auth:

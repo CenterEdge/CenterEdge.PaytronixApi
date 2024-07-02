@@ -1,0 +1,25 @@
+post:
+  tags:
+  - Transaction
+  summary: Query customer accounts using different fields
+  description: |
+    Used if a guest shows up at a store without a card and the user is registered.
+    It provides card numbers, customer names and other information pertaining to customers that match the query criteria.
+  operationId: accountQuery
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/accountQuery/accountQuery.yaml'
+    required: true
+  security:
+  - basic_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/accountQuery/accountQueryReply.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'
