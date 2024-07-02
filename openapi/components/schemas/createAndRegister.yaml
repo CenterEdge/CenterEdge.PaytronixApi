@@ -2,11 +2,11 @@ type: object
 properties:
   merchantId:
     type: integer
-    description: the merchant id provided by paytronix
+    description: The merchant id provided by paytronix
     example: 1107
   cardTemplateCode:
     type: integer
-    description: Code to uniquely identify the card template.
+    description: Paytronix-assigned card template code identifying the program to enroll the user in.
     example: 123
   activationStoreCode:
     type: string
@@ -27,23 +27,10 @@ properties:
     description: |
       List of field names that the enrollment service should check the uniqueness of against
       the existing cardholders in the program before committing any changes.
-      After checking that the inputs for the request are generally valid, the enrollment service
-      will go through each field named and look for any existing cardholders
-      in the program which have the same value as the request.
-    example: ["phone", "email"]
-  setUserFields:
-    type: object
-    description:
-    $ref: './setUserFields.yaml'
-  setAccountFields:
-    type: object
-    description:
-    $ref: './setAccountFields.yaml'
-
+      If any of the fields are not unique, the enrollment service will return an error.
+    example: ["mobilePhone", "email"]
 
 required:
 - merchantId
 - cardTemplateCode
 - enforceUniqueFields
-- setUserFields
-- setAccountFields
