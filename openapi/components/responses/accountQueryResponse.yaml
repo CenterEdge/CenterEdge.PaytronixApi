@@ -8,4 +8,3 @@ discriminator:
   mapping:
     authorizedSuccess: '../schemas/accountQuery/accountQueryAuthorizedSuccess.yaml'
     failure: '../schemas/error.yaml'
-    failed: '../schemas/error.yaml'

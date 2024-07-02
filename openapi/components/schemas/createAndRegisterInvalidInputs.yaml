@@ -1,0 +1,22 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Result of the call
+    example: invalidInputs
+  errorCode:
+    type: string
+    description: Error code of the failure
+    example: enrollment_input.validation_error
+  errorMessage:
+    type: string
+    description: Human-readable error message
+    example: Validation error for input fields
+  errorsByField:
+    type:
+    description:
+
+required:
+- result
+- conflictingFields
+- canAutoCombine
