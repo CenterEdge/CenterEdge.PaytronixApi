@@ -12,18 +12,6 @@ properties:
     type: string
     description: Human-readable error message
     example: Validation error for input fields
-  errorsByField:
-    type: object
-    additionalProperties:
-      type: array
-      items:
-        type: object
-        properties:
-          code:
-            type: string
-          text:
-            type: string
-    example: {"setUserFields/username": [{"code": "invalid_username_underscore", "text": "username cannot have leading underscores"}]}
 
 required:
 - result
