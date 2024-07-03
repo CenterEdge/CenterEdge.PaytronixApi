@@ -9,7 +9,7 @@ properties:
     description: Printed card number associated with the activated account.
     example: 1017000033749
   accountId:
-    type: int
+    type: integer
     description: The Id of the user account related to the card creation.
     example: 15173695
 
