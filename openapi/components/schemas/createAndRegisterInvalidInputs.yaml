@@ -23,5 +23,7 @@ properties:
 
 required:
 - result
-- conflictingFields
-- canAutoCombine
+- errorCode
+- errorMessage
+- errorsByField
+
