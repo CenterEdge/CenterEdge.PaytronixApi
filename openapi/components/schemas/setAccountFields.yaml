@@ -1,4 +1,30 @@
 type: object
 properties:
+  style:
+    type: string
+    description: |
+      Either strings or typed. Indicates whether the rest of the fields are typed or not.
+      If not, the same fields are present but they all have type String instead of their actual type.
+      Use typed unless there is a particular requirement.
+    example: typed
+  customerNumber:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 30 characters
+    example: ["123456"]
+  perks:
+    type: array
+    items:
+      $ref: './setPerk.yaml'
+  favoriteStore:
+    type: array
+    items:
+      $ref: './setFavoriteStore.yaml'
+  favoriteStores:
+    type: array
+    items:
+      $ref: './setFavoriteStore.yaml'
 
 required:
+- style

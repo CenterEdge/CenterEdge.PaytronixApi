@@ -32,9 +32,13 @@ properties:
   setUserFields:
     $ref: './setUserFields.yaml'
     description: User fields
+  setAccountFields:
+    $ref: './setAccountFields.yaml'
+    description: Account fields
 
 required:
 - merchantId
 - cardTemplateCode
 - enforceUniqueFields
 - setUserFields
+- setAccountFields
