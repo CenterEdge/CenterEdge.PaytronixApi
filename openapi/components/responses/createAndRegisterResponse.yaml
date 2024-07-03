@@ -3,10 +3,12 @@ description: |
 oneOf:
 - $ref: '../schemas/createAndRegisterCardCreatedSuccess.yaml'
 - $ref: '../schemas/createAndRegisterUniquenessConflict.yaml'
+- $ref: '../schemas/createAndRegisterInvalidInputs.yaml'
 - $ref: '../schemas/error.yaml'
 discriminator:
   propertyName: result
   mapping:
     cardCreatedSuccess: '../schemas/createAndRegisterCardCreatedSuccess.yaml'
     uniquenessConflict: '../schemas/createAndRegisterUniquenessConflict.yaml'
+    invalidInputs: '../schemas/createAndRegisterInvalidInputs.yaml'
     failure: '../schemas/error.yaml'

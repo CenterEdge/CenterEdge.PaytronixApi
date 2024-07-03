@@ -15,5 +15,11 @@ post:
   security:
   - basic_auth: []
   responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/responses/createAndRegisterResponse.yaml'
     '401':
       $ref: '../../components/responses/unauthorized.yaml'
