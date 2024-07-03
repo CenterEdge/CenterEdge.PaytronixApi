@@ -18,7 +18,8 @@ properties:
       type: array
       items:
         type: object
-        $ref: './errorByFieldObject.yaml'
+        $ref: './errorByField.yaml'
+    example: {"setUserFields/username": [{"code": "invalid_username_underscore", "text": "username cannot have leading underscores"}]}
 
 required:
 - result
