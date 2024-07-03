@@ -29,7 +29,7 @@ properties:
     example: false
   combineCode:
     type: string
-    desription: Code which can be passed to POST enrollment/initiateAutoCombine to begin the auto-combine process
+    description: Code which can be passed to POST enrollment/initiateAutoCombine to begin the auto-combine process
 
 required:
 - result
