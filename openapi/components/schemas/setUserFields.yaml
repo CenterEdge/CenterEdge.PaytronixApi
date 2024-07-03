@@ -50,7 +50,7 @@ properties:
       [ ] ( ) < > \\ " and control characters are not allowed anywhere in the email address.
       There must be exactly one @ in a valid email address.
       The part after the @ must be a series of . separated segments, and cannot be either led by or trailed by a .
-    example: ["aGoogleUser@gmail.com"]
+    example: ["example@centeredgesoftware.com"]
   addressLabel:
     type: array
     items:
