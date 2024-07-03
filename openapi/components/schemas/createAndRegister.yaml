@@ -29,8 +29,12 @@ properties:
       the existing cardholders in the program before committing any changes.
       If any of the fields are not unique, the enrollment service will return an error.
     example: ["mobilePhone", "email"]
+  setUserFields:
+    $ref: './setUserFields.yaml'
+    description: User fields
 
 required:
 - merchantId
 - cardTemplateCode
 - enforceUniqueFields
+- setUserFields

@@ -1,4 +1,219 @@
 type: object
 properties:
+  style:
+    type: string
+    description: |
+      Either strings or typed. Indicates whether the rest of the fields are typed or not.
+      If not, the same fields are present but they all have type String instead of their actual type.
+      Use typed unless there is a particular requirement.
+    example: typed
+  optIn:
+    type: boolean
+    description: |
+      true indicates the user wishes to receive emails materials from time to time, false means they do not wish to.
+      If blank, the system auto sets this value to true on the users account.
+    example: true
+  salutation:
+    type: array
+    items:
+      type: string
+      enum:
+      - Mr.
+      - Ms.
+      - Mrs.
+      - Dr.
+      - Rev.
+  firstName:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 30 characters
+    example: ["Jonathan"]
+  lastName:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 30 characters
+    example: ["Richards"]
+  companyName:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 50 characters
+    example: ["CenterEdge Software"]
+  email:
+    type: array
+    items:
+      type: string
+    description: |
+      Must be non-empty, no longer than 100 characters, and a well formatted email address.
+      [ ] ( ) < > \\ " and control characters are not allowed anywhere in the email address.
+      There must be exactly one @ in a valid email address.
+      The part after the @ must be a series of . separated segments, and cannot be either led by or trailed by a .
+    example: ["aGoogleUser@gmail.com"]
+  addressLabel:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 100 characters
+    example: ["Home"]
+  address1:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 100 characters
+    example: ["307 Waverley Oaks Rd."]
+  address2:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 100 characters
+    example: ["Suite 309"]
+  city:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 50 characters
+    example: ["Waltham"]
+  stateProvince:
+    type: array
+    items:
+      type: string
+    description: |
+      Must be a valid two-letter state or province code for the country.
+      If the country is not specified, US is assumed
+    example: ["NC"]
+  country:
+    type: array
+    items:
+      type: string
+      enum:
+      - US
+      - CA
+    description: Allowed values are US and CA
+    example: ["US"]
+  phone:
+    type: array
+    items:
+      type: string
+    description: Validated using Phone Number Validation
+    example: ["6176493300"]
+  fax:
+    type: array
+    items:
+      type: string
+    description: Must be exactly 10 numeric digits
+    example: ["6178120725"]
+  mobilePhone:
+    type: array
+    items:
+      type: string
+    description: Validated using Phone Number Validation
+    example: ["9995551212"]
+  dateOfBirth:
+    type: array
+    items:
+      type: string
+      format: date
+    description: Must be before the date the request is received, and after 1753-01-01
+    example: ["1980-01-01"]
+  anniversaryDate:
+    type: array
+    items:
+      type: string
+      format: date
+    description: Must be before the date the request is received, and after 1753-01-01
+    example: ["2005-01-01"]
+  custom1:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: []
+  custom2:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: []
+  custom3:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: null
+  custom4:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: ["A custom value"]
+  custom5:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: ["A custom value"]
+  custom6:
+    type: array
+    items:
+      type: string
+    description: must be non-empty and no longer than 100 characters
+    example: ["A custom value"]
+  username:
+    type: array
+    items:
+      type: string
+    description: |
+      Must be at least 6 characters, no longer than 60 characters,
+      not having leading or trailing whitespace, and be unique among cardholders of the merchant.
+      Cannot be specified for users that are not yet registered,
+      unless the endpoint is one that performs registration
+    example: ["jrichards"]
+  password:
+    type: array
+    items:
+      type: string
+    description: |
+      Must be at least 6 characters.
+       Cannot be specified for users that are not yet registered,
+       unless the endpoint is one that performs registration
+    example: ["test1234"]
+  textCampaignOptIn:
+    type: boolean
+    description: |
+      true indicates the user wishes to receive marketing materials from time to time via text message (SMS),
+      false means they do not wish to
+    example: false
+  nickname:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 30 characters
+    example: ["tester"]
+  avatarCode:
+    type: array
+    items:
+      type: string
+    description: Must be non-empty and no longer than 30 character
+    example: ["QA_BADGE_004"]
+  referrerEmail:
+    type: array
+    items:
+      type: string
+    description: |
+      Email address of an existing user who referred this new user and must be no longer than 100 characters.
+      The referrer will not receive their reward if this value is not provided during registration
+    example: ["referrer@paytronix.com"]
+  referralCode:
+    type: array
+    items:
+      type: string
+    description: |
+      Encrypted code of a bulk referral.
+      The referrer will not receive their reward if this value is not provided during registration.
+      Do not provide both referrerEmail and referralCode
+    example: ["JB2IUG_iubdbk2cwelkcI4HNILV5vGliugGIndcNUWDIUYG"]
 
 required:
+- style
