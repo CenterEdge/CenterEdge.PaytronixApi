@@ -1,0 +1,12 @@
+type: object
+properties:
+  code:
+    type: string
+    example: invalid_username_underscore
+  text:
+    type: string
+    example: username cannot have leading underscores
+
+required:
+- code
+- text
