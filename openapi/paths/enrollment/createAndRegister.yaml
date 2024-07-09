@@ -20,6 +20,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/responses/createAndRegisterResponse.yaml'
+            $ref: '../../components/schemas/createAndRegisterResponse.yaml'
     '401':
       $ref: '../../components/responses/unauthorized.yaml'
