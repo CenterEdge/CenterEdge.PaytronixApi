@@ -1,16 +1,16 @@
-description: |
-  Response information from a check reversal call.
-oneOf:
-  - $ref: './authorizedSuccessAddRedeem.yaml'
-  - $ref: './authorizedVariantSuccessAddRedeem.yaml'
-  - $ref: './transactionDenied.yaml'
-  - $ref: './userDataError.yaml'
-  - $ref: './transactionFailure.yaml'
-discriminator:
-  propertyName: result
-  mapping:
-    authorizedSuccess: './authorizedSuccessAddRedeem.yaml'
-    authorizedVariantSuccess: './authorizedVariantSuccessAddRedeem.yaml'
-    denied: './transactionDenied.yaml'
-    userDataError: './userDataError.yaml'
-    failure: './transactionFailure.yaml'
+type: object
+allOf:
+  - $ref: './authorizedSuccess.yaml'
+properties:
+  addWalletContents:
+    type: array
+    items:
+      $ref: './addWalletContents.yaml'
+  redeemWalletContents:
+    type: array
+    items:
+      $ref: './redeemWalletContents.yaml'
+  changedWalletContents:
+    type: array
+    items:
+      $ref: './changedWalletContents.yaml'
