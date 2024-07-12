@@ -1,4 +1,6 @@
 type: object
+allOf:
+  - $ref: './authorizedSuccess.yaml'
 properties:
   addWalletContents:
     type: array
