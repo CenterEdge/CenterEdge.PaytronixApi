@@ -29,6 +29,12 @@ properties:
   rewardSelectionMode:
     $ref: './rewardSelectionMode.yaml'
     description: Identifies whether to use automatic, manual, or applicable_rewards reward selection.
+  receiptSettings:
+    type: array
+    description: List of receipt settings
+    minimum: 1
+    items:
+      $ref: './receiptSettings.yaml'
 
 required:
 - merchantId
@@ -38,3 +44,4 @@ required:
 - terminal
 - operator
 - rewardSelectionMode
+- receiptSettings
