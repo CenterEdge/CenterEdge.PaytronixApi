@@ -1,0 +1,9 @@
+type: object
+properties:
+  headerInfo:
+    $ref: './headerInfo.yaml'
+  cardInfo:
+    $ref: './cardInfo.yaml'
+required:
+- headerInfo
+- cardInfo

@@ -1,0 +1,27 @@
+post:
+  tags:
+  - Transaction
+  summary: Request gift card balance information
+  description: |
+    A BalanceInquiry is used to request current balance information for a specified card in the Paytronix system.
+    This is designed to provide information about both the stored value balance and some selected loyalty program
+    information, if available, so the reply deals with all possible balance information. For pure stored value cards,
+    only the stored value balance will be used.
+  operationId: balanceInquiry
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/balanceInquiry.yaml'
+    required: true
+  security:
+  - basic_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/transactionReply.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'

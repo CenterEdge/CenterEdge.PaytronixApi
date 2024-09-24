@@ -7,6 +7,7 @@ info:
     email: bburnett@centeredgesoftware.com
   license:
     name: See license agreement
+    url: http://paytronix.com/
   x-logo:
     url: 'https://raw.githubusercontent.com/CenterEdge/centeredge-resources/master/logo/2022/CenterEdge_Logo_Cmyk.svg'
   description: CenterEdge Software Integration with Paytronix API
@@ -27,6 +28,12 @@ paths:
     $ref: 'paths/enrollment/smsEnroll.yaml'
   '/enrollment/createAndRegister':
     $ref: 'paths/enrollment/createAndRegister.yaml'
+  '/transaction/activateAdd':
+    $ref: 'paths/transaction/activateAdd.yaml'
+  '/transaction/addRedeem':
+    $ref: 'paths/transaction/addRedeem.yaml'
+  '/transaction/balanceInquiry':
+    $ref: 'paths/transaction/balanceInquiry.yaml'
   '/transaction/reverse':
     $ref: 'paths/transaction/reverse.yaml'
   '/transaction/accountQuery':

@@ -1,0 +1,14 @@
+type: string
+enum:
+- in store
+- online web
+- online app
+- online app - android
+- online app - ios
+- call in
+- call center
+- drive through
+- kiosk
+- 3rd party ordering
+- smart home device ordering
+- other
