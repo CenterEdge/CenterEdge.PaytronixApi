@@ -1,0 +1,9 @@
+type: string
+enum:
+- dine in
+- pick up
+- in house delivery
+- curbside
+- drive through
+- 3rd party delivery
+- other

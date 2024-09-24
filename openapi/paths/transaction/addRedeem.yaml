@@ -1,0 +1,25 @@
+post:
+  tags:
+  - Transaction
+  summary: Reload a gift card or use balance to pay for a transaction
+  description: |
+    The add redeem request is used to add value to a card or to redeem value from it,
+    depending on the contents of the request.
+  operationId: addRedeem
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/addRedeem.yaml'
+    required: true
+  security:
+  - basic_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/addRedeemReply.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'

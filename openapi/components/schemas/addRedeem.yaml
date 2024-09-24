@@ -1,0 +1,27 @@
+type: object
+properties:
+  headerInfo:
+    $ref: './headerInfo.yaml'
+  cardInfo:
+    $ref: './cardInfo.yaml'
+  addWalletContents:
+    type: array
+    items:
+      $ref: './addWalletContents.yaml'
+  redeemWalletContents:
+    type: array
+    items:
+      $ref: './redeemWalletContents.yaml'
+  autoActivateCard:
+    type: boolean
+  isCatering:
+    type: boolean
+  orderMethod:
+    $ref: './orderMethod.yaml'
+  deliveryMethod:
+    $ref: './deliveryMethod.yaml'
+required:
+- headerInfo
+- cardInfo
+- addWalletContents
+- redeemWalletContents
