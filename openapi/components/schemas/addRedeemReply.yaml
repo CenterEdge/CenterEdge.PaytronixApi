@@ -1,6 +1,6 @@
 type: object
 allOf:
-  - $ref: './authorizedSuccess.yaml'
+  - $ref: './transactionReply.yaml'
 properties:
   addWalletContents:
     type: array
