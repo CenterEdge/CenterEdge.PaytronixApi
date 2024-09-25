@@ -1,6 +1,18 @@
 type: object
-allOf:
-  - $ref: './transactionReply.yaml'
+oneOf:
+  - $ref: './authorizedSuccess.yaml'
+  - $ref: './authorizedVariantSuccess.yaml'
+  - $ref: './transactionDenied.yaml'
+  - $ref: './userDataError.yaml'
+  - $ref: './transactionFailure.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    authorizedSuccess: './authorizedSuccess.yaml'
+    authorizedVariantSuccess: './authorizedVariantSuccess.yaml'
+    denied: './transactionDenied.yaml'
+    userDataError: './userDataError.yaml'
+    failure: './transactionFailure.yaml'
 properties:
   addWalletContents:
     type: array
