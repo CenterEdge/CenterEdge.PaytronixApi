@@ -6,5 +6,5 @@ oneOf:
 discriminator:
   propertyName: result
   mapping:
-    authorizedSuccess: '../schemas/smsEnrollSuccess.yaml'
+    success: '../schemas/smsEnrollSuccess.yaml'
     failure: '../schemas/error.yaml'
