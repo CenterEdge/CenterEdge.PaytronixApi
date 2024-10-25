@@ -19,7 +19,5 @@ properties:
     example: 1.25
 
 required:
-  - rewardType
-  - discountItemId
   - walletCode
   - quantity
