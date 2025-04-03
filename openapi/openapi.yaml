@@ -28,6 +28,8 @@ paths:
     $ref: 'paths/enrollment/smsEnroll.yaml'
   '/enrollment/createAndRegister':
     $ref: 'paths/enrollment/createAndRegister.yaml'
+  '/enrollment/addRelatedGuests':
+    $ref: 'paths/enrollment/addRelatedGuests.yaml'
   '/transaction/activateAdd':
     $ref: 'paths/transaction/activateAdd.yaml'
   '/transaction/addRedeem':

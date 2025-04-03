@@ -1,0 +1,27 @@
+type: object
+properties:
+  authentication:
+    type: string
+    enum:
+      - b2b
+    description: The authentication type to use for the request
+    example: b2b
+  merchantId:
+    type: integer
+    description: the merchant id provided by paytronix
+    example: 1107
+  username:
+    type: string
+    description: Username of the user to whom the guest is related.
+    example: some.user@centeredgesoftware.com
+  setRelatedGuestFields:
+    type: array
+    items:
+      $ref: './relatedGuestFieldsInput.yaml'
+    description: List of fields to update for the related guest.
+
+required:
+  - authentication
+  - merchantId
+  - username
+  - setRelatedGuestFields

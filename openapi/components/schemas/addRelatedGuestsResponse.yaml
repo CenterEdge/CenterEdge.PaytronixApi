@@ -1,0 +1,10 @@
+description: |
+  Response information from a add related guests.
+oneOf:
+- $ref: 'success.yaml'
+- $ref: 'createAndRegisterInvalidInputs.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    success: 'success.yaml'
+    failure: 'createAndRegisterInvalidInputs.yaml'

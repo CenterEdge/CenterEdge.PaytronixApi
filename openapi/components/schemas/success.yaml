@@ -1,0 +1,9 @@
+type: object
+properties:
+  result:
+    type: string
+    description: result of the call
+    example: success
+
+required:
+  - result

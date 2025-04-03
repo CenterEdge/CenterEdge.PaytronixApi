@@ -1,0 +1,25 @@
+post:
+  tags:
+  - Enrollment
+  summary: Add Related Guests
+  description: |
+    Add user information for guests who do not have their own accounts, but instead are added to an existing account as a related guest
+  operationId: addRelatedGuests
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/addRelatedGuests.yaml'
+    description: Information about related guests
+    required: true
+  security:
+  - basic_auth: []
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/addRelatedGuestsResponse.yaml'
+    '401':
+      $ref: '../../components/responses/unauthorized.yaml'
