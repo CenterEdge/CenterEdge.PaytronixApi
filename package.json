@@ -7,7 +7,7 @@
     "private": true,
       "scripts": {
       "start": "openapi preview-docs",
-      "build": "openapi bundle -o dist/centeredge-paytronixapi.yaml && openapi build-docs dist/centeredge-paytronixapi.yaml -o dist/centeredge-paytronixapi.html",
+      "build": "openapi bundle -o dist/centeredge-paytronixapi.yaml openapi/openapi.yaml && openapi build-docs dist/centeredge-paytronixapi.yaml -o dist/centeredge-paytronixapi.html",
       "test": "openapi lint"
     }
 }
