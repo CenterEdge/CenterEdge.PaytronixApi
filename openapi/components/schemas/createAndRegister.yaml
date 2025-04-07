@@ -1,5 +1,11 @@
 type: object
 properties:
+  authentication:
+    type: string
+    enum:
+    - b2b
+    description: The authentication type to use for the request.
+    example: b2b
   merchantId:
     type: integer
     description: The merchant id provided by paytronix
