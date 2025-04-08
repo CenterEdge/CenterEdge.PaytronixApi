@@ -9,24 +9,28 @@ properties:
     - Dr.
     - Rev.
   firstName:
-    type: string
-    minLength: 1
-    maxLength: 30
-    example: "Jonathan"
+    type: array
+    items:
+      type: string
+    example: [ "Jonathan" ]
   lastName:
-    type: string
-    minLength: 1
-    maxLength: 30
-    example: "Richards"
+    type: array
+    items:
+      type: string
+    example: [ "Richards" ]
   email:
-    type: string
-    description: |
-      Must be non-empty, no longer than 100 characters, and a well formatted email address.
-      [ ] ( ) < > \\ " and control characters are not allowed anywhere in the email address.
-      There must be exactly one @ in a valid email address.
-      The part after the @ must be a series of . separated segments, and cannot be either led by or trailed by a .
-    example: "example@centeredgesoftware.com"
+    type: array
+    items:
+      type: string
+      description: |
+        Must be non-empty, no longer than 100 characters, and a well formatted email address.
+        [ ] ( ) < > \\ " and control characters are not allowed anywhere in the email address.
+        There must be exactly one @ in a valid email address.
+        The part after the @ must be a series of . separated segments, and cannot be either led by or trailed by a .
+      example: [ "example@centeredgesoftware.com" ]
   dateOfBirth:
-    type: string
-    description: Must be before the date the request is received, and after 1753-01-01
-    example: "1980-01-01"
+    type: array
+    items:
+      type: string
+      description: Must be before the date the request is received, and after 1753-01-01
+      example: [ "1980-01-01" ]
