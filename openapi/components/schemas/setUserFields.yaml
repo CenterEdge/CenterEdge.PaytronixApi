@@ -114,6 +114,7 @@ properties:
     type: array
     items:
       type: string
+      format: date
     description: Must be before the date the request is received, and after 1753-01-01
     example: ["1980-01-01"]
   anniversaryDate:
