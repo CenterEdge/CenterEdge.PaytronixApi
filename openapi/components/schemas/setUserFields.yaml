@@ -103,7 +103,7 @@ properties:
     items:
       type: string
     description: Must be exactly 10 numeric digits
-    example: [ "6178120725" ]
+    example: ["6178120725"]
   mobilePhone:
     type: array
     items:
