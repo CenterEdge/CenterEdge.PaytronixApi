@@ -2,6 +2,9 @@ type: object
 properties:
   style:
     type: string
+    enum:
+    - typed
+    - strings
     description: |
       Either strings or typed. Indicates whether the rest of the fields are typed or not.
       If not, the same fields are present but they all have type String instead of their actual type.
