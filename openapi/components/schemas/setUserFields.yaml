@@ -92,7 +92,7 @@ properties:
       type: string
     description: |
       Must be a valid postal code for the given country and state/province
-    example: [ "NC" ]
+    example: [ "37115" ]
   country:
     type: array
     items:
