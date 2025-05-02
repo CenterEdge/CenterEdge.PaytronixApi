@@ -86,6 +86,13 @@ properties:
       Must be a valid two-letter state or province code for the country.
       If the country is not specified, US is assumed
     example: ["NC"]
+  postalCode:
+    type: array
+    items:
+      type: string
+    description: |
+      Must be a valid postal code for the given country and state/province
+    example: [ "37115" ]
   country:
     type: array
     items:
