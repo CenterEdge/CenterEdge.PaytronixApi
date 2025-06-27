@@ -1,0 +1,50 @@
+type: object
+properties:
+  authentication:
+    type: string
+    enum:
+    - b2b
+    description: The authentication type to use for the request.
+    example: b2b
+  merchantId:
+    type: integer
+    description: The merchant id provided by paytronix
+    example: 1107
+  cardTemplateCode:
+    type: integer
+    description: Paytronix-assigned card template code identifying the program to enroll the user in.
+    example: 123
+  activationStoreCode:
+    type: string
+    description: Paytronix store code where the activation transaction should be performed.
+    example: corp
+  enforceUniqueFields:
+    type: array
+    items:
+      type: string
+      enum:
+      - externalAccountIdentifier
+      - customerNumber
+      - email
+      - name
+      - phone
+      - fax
+      - mobilePhone
+    description: |
+      List of field names that the enrollment service should check the uniqueness of against
+      the existing cardholders in the program before committing any changes.
+      If any of the fields are not unique, the enrollment service will return an error.
+    example: [ "mobilePhone", "email" ]
+  setUserFields:
+    $ref: './setUserFields.yaml'
+    description: User fields
+  setAccountFields:
+    $ref: './setAccountFields.yaml'
+    description: Account fields
+
+required:
+- merchantId
+- cardTemplateCode
+- enforceUniqueFields
+- setUserFields
+- setAccountFields
