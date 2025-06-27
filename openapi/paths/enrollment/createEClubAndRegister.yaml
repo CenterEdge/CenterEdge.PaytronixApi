@@ -1,16 +1,16 @@
 post:
   tags:
   - Enrollment
-  summary: Create and Register an EClub Account
+  summary: Create and Register an account for an eClub Program
   description: |
-    Creates, activates, and then registers a new virtual card with the given demographic information
+    Creates, activates and then registers a new virtual eClub card with the given demographic information. 
   operationId: createEClubAndRegister
   requestBody:
     content:
       application/json:
         schema:
           $ref: '../../components/schemas/createEClubAndRegister.yaml'
-    description: Account to register and enroll
+    description: Account to register and enroll in the eClub Program
     required: true
   security:
   - basic_auth: []
