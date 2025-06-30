@@ -1,7 +1,7 @@
 post:
   tags:
   - Enrollment
-  summary: Create and Register an account for an eClub Program
+  summary: Create and Register an account for an e-Club Program
   description: |
     Creates, activates and then registers a new virtual eClub card with the given demographic information. 
   operationId: createEClubAndRegister
