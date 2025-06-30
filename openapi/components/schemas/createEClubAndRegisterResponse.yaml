@@ -1,14 +1,14 @@
 description: |
   Response information from a create and register call.
 oneOf:
-- $ref: 'createEClubAndRegisterCardCreatedSuccess.yaml'
-- $ref: 'createEClubAndRegisterUniquenessConflict.yaml'
-- $ref: 'createEClubAndRegisterInvalidInputs.yaml'
+- $ref: 'createAndRegisterCardCreatedSuccess.yaml'
+- $ref: 'createAndRegisterUniquenessConflict.yaml'
+- $ref: 'createAndRegisterInvalidInputs.yaml'
 - $ref: 'error.yaml'
 discriminator:
   propertyName: result
   mapping:
-    cardCreatedSuccess: 'createEClubAndRegisterCardCreatedSuccess.yaml'
-    uniquenessConflict: 'createEClubAndRegisterUniquenessConflict.yaml'
-    invalidInputs: 'createEClubAndRegisterInvalidInputs.yaml'
+    cardCreatedSuccess: 'createAndRegisterCardCreatedSuccess.yaml'
+    uniquenessConflict: 'createAndRegisterUniquenessConflict.yaml'
+    invalidInputs: 'createAndRegisterInvalidInputs.yaml'
     failure: 'error.yaml'
