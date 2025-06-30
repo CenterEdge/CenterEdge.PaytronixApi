@@ -2,5 +2,3 @@
 allOf:
 - $ref: './createAndRegister.yaml'
 - type: object
-  properties:
-  required:
