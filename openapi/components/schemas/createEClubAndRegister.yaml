@@ -1,5 +1,4 @@
 # Inherits from createAndRegister.yaml, add or override properties in future as needed
-CreateAndRegisterEClub:
-  allOf:
-  - $ref: './createAndRegister.yaml'
-  - type: object
+allOf:
+- $ref: './createAndRegister.yaml'
+- type: object
