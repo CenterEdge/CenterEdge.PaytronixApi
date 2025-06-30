@@ -30,6 +30,8 @@ paths:
     $ref: 'paths/enrollment/createAndRegister.yaml'
   '/enrollment/addRelatedGuests':
     $ref: 'paths/enrollment/addRelatedGuests.yaml'
+  '/enrollment/createEClubAndRegister':
+    $ref: 'paths/enrollment/createEClubAndRegister.yaml'
   '/transaction/activateAdd':
     $ref: 'paths/transaction/activateAdd.yaml'
   '/transaction/addRedeem':

@@ -1,0 +1,14 @@
+description: |
+  Response information from a create EClub and register call.
+oneOf:
+- $ref: 'createAndRegisterCardCreatedSuccess.yaml'
+- $ref: 'createAndRegisterUniquenessConflict.yaml'
+- $ref: 'createAndRegisterInvalidInputs.yaml'
+- $ref: 'error.yaml'
+discriminator:
+  propertyName: result
+  mapping:
+    cardCreatedSuccess: 'createAndRegisterCardCreatedSuccess.yaml'
+    uniquenessConflict: 'createAndRegisterUniquenessConflict.yaml'
+    invalidInputs: 'createAndRegisterInvalidInputs.yaml'
+    failure: 'error.yaml'
