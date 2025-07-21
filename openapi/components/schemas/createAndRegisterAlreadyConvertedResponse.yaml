@@ -1,0 +1,16 @@
+type: object
+properties:
+  result:
+    type: string
+    description: Result of the call
+    example: alreadyConverted
+  conflictingCardTemplateCodes:
+    type: array
+    description: List of conflicting card template codes
+    items:
+      type: integer
+    example: [ 0 ]
+
+required:
+- result
+- conflictingCardTemplateCodes
