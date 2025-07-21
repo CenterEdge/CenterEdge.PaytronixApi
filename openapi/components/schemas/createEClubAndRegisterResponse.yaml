@@ -12,4 +12,5 @@ discriminator:
     cardCreatedSuccess: 'createAndRegisterCardCreatedSuccess.yaml'
     uniquenessConflict: 'createAndRegisterUniquenessConflict.yaml'
     invalidInputs: 'createAndRegisterInvalidInputs.yaml'
+    alreadyConverted: 'createAndRegisterAlreadyConvertedResponse.yaml'
     failure: 'error.yaml'
